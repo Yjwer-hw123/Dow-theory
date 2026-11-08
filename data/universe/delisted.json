@@ -1,0 +1,2529 @@
+[
+ {
+  "code": "000003",
+  "name": "PT金田Ａ",
+  "exchange": "SZ",
+  "list_date": "1991-01-14",
+  "delist_date": "2002-06-14"
+ },
+ {
+  "code": "000004",
+  "name": "国华退",
+  "exchange": "SZ",
+  "list_date": "1990-12-01",
+  "delist_date": "2026-07-14"
+ },
+ {
+  "code": "000005",
+  "name": "ST星源",
+  "exchange": "SZ",
+  "list_date": "1990-12-10",
+  "delist_date": "2024-04-26"
+ },
+ {
+  "code": "000013",
+  "name": "*ST石化A",
+  "exchange": "SZ",
+  "list_date": "1992-05-06",
+  "delist_date": "2004-09-20"
+ },
+ {
+  "code": "000015",
+  "name": "PT中浩Ａ",
+  "exchange": "SZ",
+  "list_date": "1992-06-25",
+  "delist_date": "2001-10-25"
+ },
+ {
+  "code": "000018",
+  "name": "神城A退",
+  "exchange": "SZ",
+  "list_date": "1992-06-16",
+  "delist_date": "2020-01-07"
+ },
+ {
+  "code": "000023",
+  "name": "*ST深天",
+  "exchange": "SZ",
+  "list_date": "1993-04-29",
+  "delist_date": "2024-09-02"
+ },
+ {
+  "code": "000024",
+  "name": "招商地产",
+  "exchange": "SZ",
+  "list_date": "1993-06-07",
+  "delist_date": "2015-12-30"
+ },
+ {
+  "code": "000033",
+  "name": "新都退",
+  "exchange": "SZ",
+  "list_date": "1994-01-03",
+  "delist_date": "2017-07-07"
+ },
+ {
+  "code": "000038",
+  "name": "大通退",
+  "exchange": "SZ",
+  "list_date": "1994-08-08",
+  "delist_date": "2023-07-12"
+ },
+ {
+  "code": "000040",
+  "name": "*ST旭蓝",
+  "exchange": "SZ",
+  "list_date": "1994-08-08",
+  "delist_date": "2025-04-30"
+ },
+ {
+  "code": "000046",
+  "name": "*ST泛海",
+  "exchange": "SZ",
+  "list_date": "1994-09-12",
+  "delist_date": "2024-02-07"
+ },
+ {
+  "code": "000047",
+  "name": "ST 中 侨",
+  "exchange": "SZ",
+  "list_date": "1994-10-21",
+  "delist_date": "2003-05-30"
+ },
+ {
+  "code": "000150",
+  "name": "*ST宜康",
+  "exchange": "SZ",
+  "list_date": "2000-08-07",
+  "delist_date": "2023-06-09"
+ },
+ {
+  "code": "000405",
+  "name": "ST 鑫 光",
+  "exchange": "SZ",
+  "list_date": "1996-06-20",
+  "delist_date": "2004-03-19"
+ },
+ {
+  "code": "000406",
+  "name": "大明退市",
+  "exchange": "SZ",
+  "list_date": "1996-06-28",
+  "delist_date": "2006-04-21"
+ },
+ {
+  "code": "000412",
+  "name": "ST 五 环",
+  "exchange": "SZ",
+  "list_date": "1996-07-15",
+  "delist_date": "2003-09-19"
+ },
+ {
+  "code": "000413",
+  "name": "ST旭电",
+  "exchange": "SZ",
+  "list_date": "1996-09-25",
+  "delist_date": "2024-10-11"
+ },
+ {
+  "code": "000416",
+  "name": "*ST民控",
+  "exchange": "SZ",
+  "list_date": "1996-07-19",
+  "delist_date": "2024-06-05"
+ },
+ {
+  "code": "000418",
+  "name": "小天鹅Ａ",
+  "exchange": "SZ",
+  "list_date": "1997-03-28",
+  "delist_date": "2019-06-21"
+ },
+ {
+  "code": "000502",
+  "name": "绿景退",
+  "exchange": "SZ",
+  "list_date": "1992-11-23",
+  "delist_date": "2022-06-27"
+ },
+ {
+  "code": "000508",
+  "name": "琼民源Ａ",
+  "exchange": "SZ",
+  "list_date": "1993-04-30",
+  "delist_date": "1999-07-12"
+ },
+ {
+  "code": "000511",
+  "name": "烯碳退",
+  "exchange": "SZ",
+  "list_date": "1993-05-18",
+  "delist_date": "2018-07-18"
+ },
+ {
+  "code": "000515",
+  "name": "攀渝钛业",
+  "exchange": "SZ",
+  "list_date": "1993-07-12",
+  "delist_date": "2009-05-06"
+ },
+ {
+  "code": "000522",
+  "name": "白云山Ａ",
+  "exchange": "SZ",
+  "list_date": "1993-11-08",
+  "delist_date": "2013-04-26"
+ },
+ {
+  "code": "000527",
+  "name": "美的电器",
+  "exchange": "SZ",
+  "list_date": "1993-11-12",
+  "delist_date": "2013-09-18"
+ },
+ {
+  "code": "000535",
+  "name": "*ST 猴王",
+  "exchange": "SZ",
+  "list_date": "1993-11-30",
+  "delist_date": "2005-09-21"
+ },
+ {
+  "code": "000540",
+  "name": "*ST中天",
+  "exchange": "SZ",
+  "list_date": "1994-02-02",
+  "delist_date": "2023-06-30"
+ },
+ {
+  "code": "000542",
+  "name": "TCL 通讯",
+  "exchange": "SZ",
+  "list_date": "1993-12-01",
+  "delist_date": "2004-01-13"
+ },
+ {
+  "code": "000549",
+  "name": "S 湘火炬",
+  "exchange": "SZ",
+  "list_date": "1993-12-20",
+  "delist_date": "2007-04-27"
+ },
+ {
+  "code": "000556",
+  "name": "PT 南 洋",
+  "exchange": "SZ",
+  "list_date": "1994-05-25",
+  "delist_date": "2002-06-03"
+ },
+ {
+  "code": "000562",
+  "name": "宏源证券",
+  "exchange": "SZ",
+  "list_date": "1994-02-02",
+  "delist_date": "2015-01-26"
+ },
+ {
+  "code": "000569",
+  "name": "长城股份",
+  "exchange": "SZ",
+  "list_date": "1994-04-25",
+  "delist_date": "2009-05-06"
+ },
+ {
+  "code": "000578",
+  "name": "盐湖集团",
+  "exchange": "SZ",
+  "list_date": "1995-03-03",
+  "delist_date": "2011-03-22"
+ },
+ {
+  "code": "000583",
+  "name": "*ST 托普",
+  "exchange": "SZ",
+  "list_date": "1995-11-01",
+  "delist_date": "2007-05-21"
+ },
+ {
+  "code": "000584",
+  "name": "工智退",
+  "exchange": "SZ",
+  "list_date": "1995-11-28",
+  "delist_date": "2025-07-11"
+ },
+ {
+  "code": "000585",
+  "name": "东电退",
+  "exchange": "SZ",
+  "list_date": "1995-12-13",
+  "delist_date": "2022-05-24"
+ },
+ {
+  "code": "000587",
+  "name": "*ST金洲",
+  "exchange": "SZ",
+  "list_date": "1996-04-25",
+  "delist_date": "2023-04-03"
+ },
+ {
+  "code": "000588",
+  "name": "PT粤金曼",
+  "exchange": "SZ",
+  "list_date": "1996-01-23",
+  "delist_date": "2001-06-16"
+ },
+ {
+  "code": "000594",
+  "name": "国恒退",
+  "exchange": "SZ",
+  "list_date": "1996-03-20",
+  "delist_date": "2015-07-13"
+ },
+ {
+  "code": "000602",
+  "name": "金马退市",
+  "exchange": "SZ",
+  "list_date": "1996-08-19",
+  "delist_date": "2013-08-14"
+ },
+ {
+  "code": "000606",
+  "name": "顺利退",
+  "exchange": "SZ",
+  "list_date": "1996-10-04",
+  "delist_date": "2023-07-06"
+ },
+ {
+  "code": "000611",
+  "name": "天首退",
+  "exchange": "SZ",
+  "list_date": "1996-10-08",
+  "delist_date": "2022-06-28"
+ },
+ {
+  "code": "000613",
+  "name": "东海A退",
+  "exchange": "SZ",
+  "list_date": "1997-01-28",
+  "delist_date": "2022-06-29"
+ },
+ {
+  "code": "000616",
+  "name": "*ST海投",
+  "exchange": "SZ",
+  "list_date": "1996-11-08",
+  "delist_date": "2023-08-23"
+ },
+ {
+  "code": "000618",
+  "name": "吉化退市",
+  "exchange": "SZ",
+  "list_date": "1996-10-15",
+  "delist_date": "2006-02-20"
+ },
+ {
+  "code": "000621",
+  "name": "*ST 比特",
+  "exchange": "SZ",
+  "list_date": "1996-11-05",
+  "delist_date": "2004-09-27"
+ },
+ {
+  "code": "000622",
+  "name": "恒立退",
+  "exchange": "SZ",
+  "list_date": "1996-11-07",
+  "delist_date": "2025-07-16"
+ },
+ {
+  "code": "000627",
+  "name": "*ST天茂",
+  "exchange": "SZ",
+  "list_date": "1996-11-12",
+  "delist_date": "2025-09-30"
+ },
+ {
+  "code": "000638",
+  "name": "*ST万方",
+  "exchange": "SZ",
+  "list_date": "1996-11-26",
+  "delist_date": "2026-06-03"
+ },
+ {
+  "code": "000653",
+  "name": "ST 九 州",
+  "exchange": "SZ",
+  "list_date": "1996-11-26",
+  "delist_date": "2002-09-13"
+ },
+ {
+  "code": "000658",
+  "name": "ST 海 洋",
+  "exchange": "SZ",
+  "list_date": "1996-12-18",
+  "delist_date": "2002-09-20"
+ },
+ {
+  "code": "000660",
+  "name": "*ST 南华",
+  "exchange": "SZ",
+  "list_date": "1996-12-09",
+  "delist_date": "2004-09-13"
+ },
+ {
+  "code": "000662",
+  "name": "天夏退",
+  "exchange": "SZ",
+  "list_date": "1996-12-16",
+  "delist_date": "2021-04-12"
+ },
+ {
+  "code": "000666",
+  "name": "经纬纺机",
+  "exchange": "SZ",
+  "list_date": "1996-12-10",
+  "delist_date": "2023-10-26"
+ },
+ {
+  "code": "000667",
+  "name": "ST美置",
+  "exchange": "SZ",
+  "list_date": "1996-12-05",
+  "delist_date": "2023-07-14"
+ },
+ {
+  "code": "000671",
+  "name": "ST阳光城",
+  "exchange": "SZ",
+  "list_date": "1996-12-18",
+  "delist_date": "2023-08-16"
+ },
+ {
+  "code": "000673",
+  "name": "当代退",
+  "exchange": "SZ",
+  "list_date": "1997-01-24",
+  "delist_date": "2022-07-04"
+ },
+ {
+  "code": "000675",
+  "name": "ST 银 山",
+  "exchange": "SZ",
+  "list_date": "1996-12-26",
+  "delist_date": "2002-08-20"
+ },
+ {
+  "code": "000687",
+  "name": "华讯退",
+  "exchange": "SZ",
+  "list_date": "1997-02-21",
+  "delist_date": "2022-06-17"
+ },
+ {
+  "code": "000689",
+  "name": "ST 宏 业",
+  "exchange": "SZ",
+  "list_date": "1996-12-31",
+  "delist_date": "2002-09-05"
+ },
+ {
+  "code": "000693",
+  "name": "华泽退",
+  "exchange": "SZ",
+  "list_date": "1997-02-26",
+  "delist_date": "2019-07-09"
+ },
+ {
+  "code": "000699",
+  "name": "*ST 佳纸",
+  "exchange": "SZ",
+  "list_date": "1997-03-10",
+  "delist_date": "2007-04-04"
+ },
+ {
+  "code": "000730",
+  "name": "*ST 环保",
+  "exchange": "SZ",
+  "list_date": "1997-05-22",
+  "delist_date": "2004-09-24"
+ },
+ {
+  "code": "000732",
+  "name": "ST泰禾",
+  "exchange": "SZ",
+  "list_date": "1997-07-04",
+  "delist_date": "2023-08-04"
+ },
+ {
+  "code": "000748",
+  "name": "长城信息",
+  "exchange": "SZ",
+  "list_date": "1997-07-04",
+  "delist_date": "2017-01-18"
+ },
+ {
+  "code": "000760",
+  "name": "斯太退",
+  "exchange": "SZ",
+  "list_date": "1997-06-27",
+  "delist_date": "2021-07-23"
+ },
+ {
+  "code": "000763",
+  "name": "锦化退市",
+  "exchange": "SZ",
+  "list_date": "1997-09-15",
+  "delist_date": "2006-01-04"
+ },
+ {
+  "code": "000765",
+  "name": "*ST 华信",
+  "exchange": "SZ",
+  "list_date": "1997-11-03",
+  "delist_date": "2005-07-04"
+ },
+ {
+  "code": "000769",
+  "name": "*ST 大菲",
+  "exchange": "SZ",
+  "list_date": "1997-05-30",
+  "delist_date": "2005-09-21"
+ },
+ {
+  "code": "000780",
+  "name": "ST平能",
+  "exchange": "SZ",
+  "list_date": "1997-06-06",
+  "delist_date": "2022-01-24"
+ },
+ {
+  "code": "000787",
+  "name": "*ST 创智",
+  "exchange": "SZ",
+  "list_date": "1997-06-26",
+  "delist_date": "2013-02-08"
+ },
+ {
+  "code": "000805",
+  "name": "*ST炎黄",
+  "exchange": "SZ",
+  "list_date": "1998-05-29",
+  "delist_date": "2013-03-27"
+ },
+ {
+  "code": "000806",
+  "name": "银河退",
+  "exchange": "SZ",
+  "list_date": "1998-04-16",
+  "delist_date": "2023-07-06"
+ },
+ {
+  "code": "000817",
+  "name": "辽油退市",
+  "exchange": "SZ",
+  "list_date": "1998-05-28",
+  "delist_date": "2006-01-04"
+ },
+ {
+  "code": "000827",
+  "name": "*ST 长兴",
+  "exchange": "SZ",
+  "list_date": "1998-10-16",
+  "delist_date": "2005-09-21"
+ },
+ {
+  "code": "000832",
+  "name": "*ST 龙涤",
+  "exchange": "SZ",
+  "list_date": "1998-08-25",
+  "delist_date": "2006-06-29"
+ },
+ {
+  "code": "000835",
+  "name": "长动退",
+  "exchange": "SZ",
+  "list_date": "1999-06-25",
+  "delist_date": "2022-05-23"
+ },
+ {
+  "code": "000836",
+  "name": "ST富通",
+  "exchange": "SZ",
+  "list_date": "1997-09-29",
+  "delist_date": "2024-08-12"
+ },
+ {
+  "code": "000851",
+  "name": "*ST高鸿",
+  "exchange": "SZ",
+  "list_date": "1998-06-09",
+  "delist_date": "2025-11-11"
+ },
+ {
+  "code": "000861",
+  "name": "海印股份",
+  "exchange": "SZ",
+  "list_date": "1998-10-28",
+  "delist_date": "2024-09-18"
+ },
+ {
+  "code": "000866",
+  "name": "扬子退市",
+  "exchange": "SZ",
+  "list_date": "1998-05-12",
+  "delist_date": "2006-04-21"
+ },
+ {
+  "code": "000916",
+  "name": "华北高速",
+  "exchange": "SZ",
+  "list_date": "1999-09-27",
+  "delist_date": "2017-12-25"
+ },
+ {
+  "code": "000918",
+  "name": "*ST嘉凯",
+  "exchange": "SZ",
+  "list_date": "1999-07-20",
+  "delist_date": "2023-07-28"
+ },
+ {
+  "code": "000939",
+  "name": "凯迪退",
+  "exchange": "SZ",
+  "list_date": "1999-09-23",
+  "delist_date": "2020-12-17"
+ },
+ {
+  "code": "000956",
+  "name": "中原退市",
+  "exchange": "SZ",
+  "list_date": "1999-11-10",
+  "delist_date": "2006-04-21"
+ },
+ {
+  "code": "000961",
+  "name": "ST中南",
+  "exchange": "SZ",
+  "list_date": "2000-03-01",
+  "delist_date": "2024-07-11"
+ },
+ {
+  "code": "000971",
+  "name": "*ST高升",
+  "exchange": "SZ",
+  "list_date": "2000-04-27",
+  "delist_date": "2024-07-24"
+ },
+ {
+  "code": "000976",
+  "name": "*ST华铁",
+  "exchange": "SZ",
+  "list_date": "2000-06-01",
+  "delist_date": "2024-08-27"
+ },
+ {
+  "code": "000979",
+  "name": "中弘退",
+  "exchange": "SZ",
+  "list_date": "2000-06-16",
+  "delist_date": "2018-12-28"
+ },
+ {
+  "code": "000982",
+  "name": "中银绒业",
+  "exchange": "SZ",
+  "list_date": "2000-07-06",
+  "delist_date": "2024-08-12"
+ },
+ {
+  "code": "000996",
+  "name": "中期退",
+  "exchange": "SZ",
+  "list_date": "2000-07-18",
+  "delist_date": "2024-06-28"
+ },
+ {
+  "code": "002002",
+  "name": "ST鸿达",
+  "exchange": "SZ",
+  "list_date": "2004-06-25",
+  "delist_date": "2024-03-18"
+ },
+ {
+  "code": "002013",
+  "name": "中航机电",
+  "exchange": "SZ",
+  "list_date": "2004-07-05",
+  "delist_date": "2023-03-17"
+ },
+ {
+  "code": "002018",
+  "name": "华信退",
+  "exchange": "SZ",
+  "list_date": "2004-07-13",
+  "delist_date": "2019-11-01"
+ },
+ {
+  "code": "002070",
+  "name": "众和退",
+  "exchange": "SZ",
+  "list_date": "2006-10-12",
+  "delist_date": "2019-07-09"
+ },
+ {
+  "code": "002071",
+  "name": "长城退",
+  "exchange": "SZ",
+  "list_date": "2006-10-12",
+  "delist_date": "2021-05-07"
+ },
+ {
+  "code": "002087",
+  "name": "新纺退",
+  "exchange": "SZ",
+  "list_date": "2006-11-30",
+  "delist_date": "2024-06-28"
+ },
+ {
+  "code": "002089",
+  "name": "新海退",
+  "exchange": "SZ",
+  "list_date": "2006-11-30",
+  "delist_date": "2024-04-18"
+ },
+ {
+  "code": "002113",
+  "name": "*ST天润",
+  "exchange": "SZ",
+  "list_date": "2007-02-08",
+  "delist_date": "2023-08-11"
+ },
+ {
+  "code": "002118",
+  "name": "*ST紫鑫",
+  "exchange": "SZ",
+  "list_date": "2007-03-02",
+  "delist_date": "2023-08-04"
+ },
+ {
+  "code": "002143",
+  "name": "印纪退",
+  "exchange": "SZ",
+  "list_date": "2007-07-20",
+  "delist_date": "2019-11-29"
+ },
+ {
+  "code": "002147",
+  "name": "新光退",
+  "exchange": "SZ",
+  "list_date": "2007-08-08",
+  "delist_date": "2022-06-23"
+ },
+ {
+  "code": "002220",
+  "name": "天宝退",
+  "exchange": "SZ",
+  "list_date": "2008-02-28",
+  "delist_date": "2020-08-11"
+ },
+ {
+  "code": "002231",
+  "name": "*ST奥维",
+  "exchange": "SZ",
+  "list_date": "2008-05-12",
+  "delist_date": "2026-03-27"
+ },
+ {
+  "code": "002260",
+  "name": "德奥退",
+  "exchange": "SZ",
+  "list_date": "2008-07-16",
+  "delist_date": "2022-06-17"
+ },
+ {
+  "code": "002280",
+  "name": "ST联络",
+  "exchange": "SZ",
+  "list_date": "2009-08-21",
+  "delist_date": "2024-08-16"
+ },
+ {
+  "code": "002288",
+  "name": "*ST超华",
+  "exchange": "SZ",
+  "list_date": "2009-09-03",
+  "delist_date": "2024-08-19"
+ },
+ {
+  "code": "002308",
+  "name": "*ST威创",
+  "exchange": "SZ",
+  "list_date": "2009-11-27",
+  "delist_date": "2024-09-27"
+ },
+ {
+  "code": "002325",
+  "name": "*ST洪涛",
+  "exchange": "SZ",
+  "list_date": "2009-12-22",
+  "delist_date": "2024-08-15"
+ },
+ {
+  "code": "002336",
+  "name": "人乐退",
+  "exchange": "SZ",
+  "list_date": "2010-01-13",
+  "delist_date": "2025-07-04"
+ },
+ {
+  "code": "002341",
+  "name": "ST新纶",
+  "exchange": "SZ",
+  "list_date": "2010-01-22",
+  "delist_date": "2024-08-23"
+ },
+ {
+  "code": "002359",
+  "name": "北讯退",
+  "exchange": "SZ",
+  "list_date": "2010-02-10",
+  "delist_date": "2021-07-23"
+ },
+ {
+  "code": "002411",
+  "name": "必康退",
+  "exchange": "SZ",
+  "list_date": "2010-05-25",
+  "delist_date": "2023-07-12"
+ },
+ {
+  "code": "002417",
+  "name": "深南退",
+  "exchange": "SZ",
+  "list_date": "2010-06-01",
+  "delist_date": "2023-07-10"
+ },
+ {
+  "code": "002433",
+  "name": "太安退",
+  "exchange": "SZ",
+  "list_date": "2010-06-18",
+  "delist_date": "2024-07-05"
+ },
+ {
+  "code": "002435",
+  "name": "ST长康",
+  "exchange": "SZ",
+  "list_date": "2010-06-18",
+  "delist_date": "2024-08-15"
+ },
+ {
+  "code": "002447",
+  "name": "晨鑫退",
+  "exchange": "SZ",
+  "list_date": "2010-07-13",
+  "delist_date": "2022-06-27"
+ },
+ {
+  "code": "002450",
+  "name": "康得退",
+  "exchange": "SZ",
+  "list_date": "2010-07-16",
+  "delist_date": "2021-05-31"
+ },
+ {
+  "code": "002464",
+  "name": "众应退",
+  "exchange": "SZ",
+  "list_date": "2010-08-31",
+  "delist_date": "2022-06-28"
+ },
+ {
+  "code": "002473",
+  "name": "圣莱退",
+  "exchange": "SZ",
+  "list_date": "2010-09-10",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "002477",
+  "name": "雏鹰退",
+  "exchange": "SZ",
+  "list_date": "2010-09-15",
+  "delist_date": "2019-10-16"
+ },
+ {
+  "code": "002499",
+  "name": "科林退",
+  "exchange": "SZ",
+  "list_date": "2010-11-09",
+  "delist_date": "2023-04-18"
+ },
+ {
+  "code": "002502",
+  "name": "ST鼎龙",
+  "exchange": "SZ",
+  "list_date": "2010-11-17",
+  "delist_date": "2024-09-05"
+ },
+ {
+  "code": "002503",
+  "name": "*ST搜特",
+  "exchange": "SZ",
+  "list_date": "2010-11-17",
+  "delist_date": "2023-08-11"
+ },
+ {
+  "code": "002504",
+  "name": "*ST弘高",
+  "exchange": "SZ",
+  "list_date": "2010-11-18",
+  "delist_date": "2023-08-21"
+ },
+ {
+  "code": "002505",
+  "name": "鹏都农牧",
+  "exchange": "SZ",
+  "list_date": "2010-11-18",
+  "delist_date": "2024-08-30"
+ },
+ {
+  "code": "002509",
+  "name": "天茂退",
+  "exchange": "SZ",
+  "list_date": "2010-11-23",
+  "delist_date": "2020-07-20"
+ },
+ {
+  "code": "002604",
+  "name": "龙力退",
+  "exchange": "SZ",
+  "list_date": "2011-07-28",
+  "delist_date": "2020-07-15"
+ },
+ {
+  "code": "002610",
+  "name": "ST爱康",
+  "exchange": "SZ",
+  "list_date": "2011-08-15",
+  "delist_date": "2024-08-12"
+ },
+ {
+  "code": "002618",
+  "name": "丹邦退",
+  "exchange": "SZ",
+  "list_date": "2011-09-20",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "002619",
+  "name": "*ST艾格",
+  "exchange": "SZ",
+  "list_date": "2011-09-29",
+  "delist_date": "2022-04-28"
+ },
+ {
+  "code": "002621",
+  "name": "*ST美吉",
+  "exchange": "SZ",
+  "list_date": "2011-09-29",
+  "delist_date": "2024-08-05"
+ },
+ {
+  "code": "002665",
+  "name": "ST航高",
+  "exchange": "SZ",
+  "list_date": "2012-03-27",
+  "delist_date": "2024-08-26"
+ },
+ {
+  "code": "002680",
+  "name": "长生退",
+  "exchange": "SZ",
+  "list_date": "2012-06-05",
+  "delist_date": "2019-11-27"
+ },
+ {
+  "code": "002684",
+  "name": "猛狮退",
+  "exchange": "SZ",
+  "list_date": "2012-06-12",
+  "delist_date": "2022-06-27"
+ },
+ {
+  "code": "002699",
+  "name": "*ST美盛",
+  "exchange": "SZ",
+  "list_date": "2012-09-11",
+  "delist_date": "2024-06-05"
+ },
+ {
+  "code": "002711",
+  "name": "欧浦退",
+  "exchange": "SZ",
+  "list_date": "2014-01-27",
+  "delist_date": "2021-07-15"
+ },
+ {
+  "code": "002740",
+  "name": "*ST爱迪",
+  "exchange": "SZ",
+  "list_date": "2015-01-22",
+  "delist_date": "2024-03-04"
+ },
+ {
+  "code": "002750",
+  "name": "龙津退",
+  "exchange": "SZ",
+  "list_date": "2015-03-24",
+  "delist_date": "2025-06-27"
+ },
+ {
+  "code": "002751",
+  "name": "易尚退",
+  "exchange": "SZ",
+  "list_date": "2015-04-24",
+  "delist_date": "2023-07-13"
+ },
+ {
+  "code": "002770",
+  "name": "科迪退",
+  "exchange": "SZ",
+  "list_date": "2015-06-30",
+  "delist_date": "2022-06-23"
+ },
+ {
+  "code": "002776",
+  "name": "*ST柏龙",
+  "exchange": "SZ",
+  "list_date": "2015-06-26",
+  "delist_date": "2024-01-25"
+ },
+ {
+  "code": "002781",
+  "name": "奇信退",
+  "exchange": "SZ",
+  "list_date": "2015-12-22",
+  "delist_date": "2023-07-05"
+ },
+ {
+  "code": "002808",
+  "name": "恒久退",
+  "exchange": "SZ",
+  "list_date": "2016-08-12",
+  "delist_date": "2026-07-14"
+ },
+ {
+  "code": "002898",
+  "name": "赛隆退",
+  "exchange": "SZ",
+  "list_date": "2017-09-12",
+  "delist_date": "2026-07-17"
+ },
+ {
+  "code": "200002",
+  "name": "万  科Ｂ",
+  "exchange": "SZ",
+  "list_date": "1993-05-28",
+  "delist_date": "2014-06-19"
+ },
+ {
+  "code": "200003",
+  "name": "PT金田Ｂ",
+  "exchange": "SZ",
+  "list_date": "1993-06-29",
+  "delist_date": "2002-06-14"
+ },
+ {
+  "code": "200013",
+  "name": "*ST石化B",
+  "exchange": "SZ",
+  "list_date": "1992-05-06",
+  "delist_date": "2004-09-20"
+ },
+ {
+  "code": "200015",
+  "name": "PT中浩Ｂ",
+  "exchange": "SZ",
+  "list_date": "1992-06-25",
+  "delist_date": "2001-10-25"
+ },
+ {
+  "code": "200018",
+  "name": "神城B退",
+  "exchange": "SZ",
+  "list_date": "1992-06-16",
+  "delist_date": "2020-01-07"
+ },
+ {
+  "code": "200024",
+  "name": "招商局Ｂ",
+  "exchange": "SZ",
+  "list_date": "1993-06-07",
+  "delist_date": "2015-12-11"
+ },
+ {
+  "code": "200039",
+  "name": "中  集Ｂ",
+  "exchange": "SZ",
+  "list_date": "1994-03-23",
+  "delist_date": "2012-12-14"
+ },
+ {
+  "code": "200041",
+  "name": "*ST本实B",
+  "exchange": "SZ",
+  "list_date": "1994-05-30",
+  "delist_date": "2009-12-04"
+ },
+ {
+  "code": "200053",
+  "name": "深基地Ｂ",
+  "exchange": "SZ",
+  "list_date": "1995-07-28",
+  "delist_date": "2018-06-15"
+ },
+ {
+  "code": "200054",
+  "name": "建车B",
+  "exchange": "SZ",
+  "list_date": "1995-07-25",
+  "delist_date": "2024-08-22"
+ },
+ {
+  "code": "200057",
+  "name": "*ST大洋B",
+  "exchange": "SZ",
+  "list_date": "1995-12-21",
+  "delist_date": "2005-09-21"
+ },
+ {
+  "code": "200152",
+  "name": "山航B退",
+  "exchange": "SZ",
+  "list_date": "2000-09-12",
+  "delist_date": "2023-07-10"
+ },
+ {
+  "code": "200160",
+  "name": "东沣B退",
+  "exchange": "SZ",
+  "list_date": "2000-09-29",
+  "delist_date": "2020-07-21"
+ },
+ {
+  "code": "200168",
+  "name": "*ST舜喆B",
+  "exchange": "SZ",
+  "list_date": "2000-10-27",
+  "delist_date": "2021-05-26"
+ },
+ {
+  "code": "200413",
+  "name": "ST东旭B",
+  "exchange": "SZ",
+  "list_date": "1996-07-08",
+  "delist_date": "2024-10-11"
+ },
+ {
+  "code": "200418",
+  "name": "小天鹅Ｂ",
+  "exchange": "SZ",
+  "list_date": "1996-07-18",
+  "delist_date": "2019-05-27"
+ },
+ {
+  "code": "200513",
+  "name": "丽  珠Ｂ",
+  "exchange": "SZ",
+  "list_date": "1993-07-20",
+  "delist_date": "2014-01-10"
+ },
+ {
+  "code": "200613",
+  "name": "东海B退",
+  "exchange": "SZ",
+  "list_date": "1996-10-08",
+  "delist_date": "2022-06-29"
+ },
+ {
+  "code": "200770",
+  "name": "武锅B退",
+  "exchange": "SZ",
+  "list_date": "1998-04-15",
+  "delist_date": "2015-07-13"
+ },
+ {
+  "code": "200771",
+  "name": "杭汽轮Ｂ",
+  "exchange": "SZ",
+  "list_date": "1998-04-28",
+  "delist_date": "2025-12-22"
+ },
+ {
+  "code": "200986",
+  "name": "粤华包Ｂ",
+  "exchange": "SZ",
+  "list_date": "2000-07-06",
+  "delist_date": "2021-07-21"
+ },
+ {
+  "code": "300023",
+  "name": "宝德退",
+  "exchange": "SZ",
+  "list_date": "2009-10-30",
+  "delist_date": "2022-06-29"
+ },
+ {
+  "code": "300028",
+  "name": "金亚退",
+  "exchange": "SZ",
+  "list_date": "2009-10-30",
+  "delist_date": "2020-08-03"
+ },
+ {
+  "code": "300029",
+  "name": "天龙退",
+  "exchange": "SZ",
+  "list_date": "2009-12-25",
+  "delist_date": "2026-07-10"
+ },
+ {
+  "code": "300038",
+  "name": "数知退",
+  "exchange": "SZ",
+  "list_date": "2010-01-08",
+  "delist_date": "2022-06-30"
+ },
+ {
+  "code": "300064",
+  "name": "金刚退",
+  "exchange": "SZ",
+  "list_date": "2010-03-26",
+  "delist_date": "2022-06-27"
+ },
+ {
+  "code": "300089",
+  "name": "文化退",
+  "exchange": "SZ",
+  "list_date": "2010-06-25",
+  "delist_date": "2023-07-13"
+ },
+ {
+  "code": "300090",
+  "name": "盛运退",
+  "exchange": "SZ",
+  "list_date": "2010-06-25",
+  "delist_date": "2020-08-25"
+ },
+ {
+  "code": "300104",
+  "name": "乐视退",
+  "exchange": "SZ",
+  "list_date": "2010-08-12",
+  "delist_date": "2020-07-21"
+ },
+ {
+  "code": "300108",
+  "name": "*ST吉药",
+  "exchange": "SZ",
+  "list_date": "2010-08-25",
+  "delist_date": "2025-05-29"
+ },
+ {
+  "code": "300116",
+  "name": "*ST保力",
+  "exchange": "SZ",
+  "list_date": "2010-09-02",
+  "delist_date": "2024-07-25"
+ },
+ {
+  "code": "300117",
+  "name": "*ST嘉寓",
+  "exchange": "SZ",
+  "list_date": "2010-09-02",
+  "delist_date": "2025-04-30"
+ },
+ {
+  "code": "300156",
+  "name": "神雾退",
+  "exchange": "SZ",
+  "list_date": "2011-01-07",
+  "delist_date": "2020-08-25"
+ },
+ {
+  "code": "300178",
+  "name": "腾邦退",
+  "exchange": "SZ",
+  "list_date": "2011-02-15",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "300186",
+  "name": "大华农",
+  "exchange": "SZ",
+  "list_date": "2011-03-08",
+  "delist_date": "2015-11-02"
+ },
+ {
+  "code": "300202",
+  "name": "聚龙退",
+  "exchange": "SZ",
+  "list_date": "2011-04-15",
+  "delist_date": "2022-07-04"
+ },
+ {
+  "code": "300208",
+  "name": "中程退",
+  "exchange": "SZ",
+  "list_date": "2011-04-26",
+  "delist_date": "2025-07-21"
+ },
+ {
+  "code": "300216",
+  "name": "千山退",
+  "exchange": "SZ",
+  "list_date": "2011-05-11",
+  "delist_date": "2020-09-16"
+ },
+ {
+  "code": "300262",
+  "name": "*ST巴安",
+  "exchange": "SZ",
+  "list_date": "2011-09-16",
+  "delist_date": "2024-08-19"
+ },
+ {
+  "code": "300273",
+  "name": "和佳退",
+  "exchange": "SZ",
+  "list_date": "2011-10-26",
+  "delist_date": "2023-07-06"
+ },
+ {
+  "code": "300280",
+  "name": "紫天退",
+  "exchange": "SZ",
+  "list_date": "2011-12-29",
+  "delist_date": "2025-10-14"
+ },
+ {
+  "code": "300282",
+  "name": "三盛退",
+  "exchange": "SZ",
+  "list_date": "2011-12-29",
+  "delist_date": "2024-07-18"
+ },
+ {
+  "code": "300297",
+  "name": "蓝盾退",
+  "exchange": "SZ",
+  "list_date": "2012-03-15",
+  "delist_date": "2023-07-31"
+ },
+ {
+  "code": "300309",
+  "name": "吉艾退",
+  "exchange": "SZ",
+  "list_date": "2012-04-10",
+  "delist_date": "2023-05-30"
+ },
+ {
+  "code": "300312",
+  "name": "邦讯退",
+  "exchange": "SZ",
+  "list_date": "2012-05-08",
+  "delist_date": "2022-07-04"
+ },
+ {
+  "code": "300325",
+  "name": "德威退",
+  "exchange": "SZ",
+  "list_date": "2012-06-01",
+  "delist_date": "2022-06-28"
+ },
+ {
+  "code": "300330",
+  "name": "计通退",
+  "exchange": "SZ",
+  "list_date": "2012-06-19",
+  "delist_date": "2023-05-24"
+ },
+ {
+  "code": "300336",
+  "name": "新文退",
+  "exchange": "SZ",
+  "list_date": "2012-07-10",
+  "delist_date": "2023-07-05"
+ },
+ {
+  "code": "300344",
+  "name": "立方退",
+  "exchange": "SZ",
+  "list_date": "2012-08-01",
+  "delist_date": "2026-04-22"
+ },
+ {
+  "code": "300356",
+  "name": "光一退",
+  "exchange": "SZ",
+  "list_date": "2012-10-09",
+  "delist_date": "2023-07-13"
+ },
+ {
+  "code": "300362",
+  "name": "天翔退",
+  "exchange": "SZ",
+  "list_date": "2014-01-21",
+  "delist_date": "2021-08-30"
+ },
+ {
+  "code": "300367",
+  "name": "网力退",
+  "exchange": "SZ",
+  "list_date": "2014-01-29",
+  "delist_date": "2022-06-30"
+ },
+ {
+  "code": "300372",
+  "name": "欣泰退",
+  "exchange": "SZ",
+  "list_date": "2014-01-27",
+  "delist_date": "2017-08-28"
+ },
+ {
+  "code": "300379",
+  "name": "东通退",
+  "exchange": "SZ",
+  "list_date": "2014-01-28",
+  "delist_date": "2026-01-22"
+ },
+ {
+  "code": "300391",
+  "name": "长药退",
+  "exchange": "SZ",
+  "list_date": "2014-08-01",
+  "delist_date": "2026-04-13"
+ },
+ {
+  "code": "300392",
+  "name": "腾信退",
+  "exchange": "SZ",
+  "list_date": "2014-09-10",
+  "delist_date": "2023-07-10"
+ },
+ {
+  "code": "300431",
+  "name": "暴风退",
+  "exchange": "SZ",
+  "list_date": "2015-03-24",
+  "delist_date": "2020-11-10"
+ },
+ {
+  "code": "300495",
+  "name": "*ST美尚",
+  "exchange": "SZ",
+  "list_date": "2015-12-22",
+  "delist_date": "2024-09-20"
+ },
+ {
+  "code": "300526",
+  "name": "中潜退",
+  "exchange": "SZ",
+  "list_date": "2016-08-02",
+  "delist_date": "2023-07-12"
+ },
+ {
+  "code": "300630",
+  "name": "普利退",
+  "exchange": "SZ",
+  "list_date": "2017-03-28",
+  "delist_date": "2025-05-22"
+ },
+ {
+  "code": "300742",
+  "name": "越博退",
+  "exchange": "SZ",
+  "list_date": "2018-05-08",
+  "delist_date": "2024-07-22"
+ },
+ {
+  "code": "300799",
+  "name": "左江退",
+  "exchange": "SZ",
+  "list_date": "2019-10-29",
+  "delist_date": "2024-07-29"
+ },
+ {
+  "code": "600001",
+  "name": "邯郸钢铁",
+  "exchange": "SH",
+  "list_date": "1998-01-22",
+  "delist_date": "2009-12-29"
+ },
+ {
+  "code": "600002",
+  "name": "齐鲁退市",
+  "exchange": "SH",
+  "list_date": "1998-04-08",
+  "delist_date": "2006-04-24"
+ },
+ {
+  "code": "600003",
+  "name": "ST东北高",
+  "exchange": "SH",
+  "list_date": "1999-08-10",
+  "delist_date": "2010-02-26"
+ },
+ {
+  "code": "600005",
+  "name": "武钢股份",
+  "exchange": "SH",
+  "list_date": "1999-08-03",
+  "delist_date": "2017-02-14"
+ },
+ {
+  "code": "600065",
+  "name": "*ST联 谊",
+  "exchange": "SH",
+  "list_date": "1997-05-23",
+  "delist_date": "2007-12-13"
+ },
+ {
+  "code": "600068",
+  "name": "葛洲坝",
+  "exchange": "SH",
+  "list_date": "1997-05-26",
+  "delist_date": "2021-09-13"
+ },
+ {
+  "code": "600069",
+  "name": "退市银鸽",
+  "exchange": "SH",
+  "list_date": "1997-04-30",
+  "delist_date": "2020-08-28"
+ },
+ {
+  "code": "600070",
+  "name": "*ST富润",
+  "exchange": "SH",
+  "list_date": "1997-06-04",
+  "delist_date": "2025-04-30"
+ },
+ {
+  "code": "600074",
+  "name": "退市保千",
+  "exchange": "SH",
+  "list_date": "1997-06-23",
+  "delist_date": "2020-06-03"
+ },
+ {
+  "code": "600077",
+  "name": "*ST宋都",
+  "exchange": "SH",
+  "list_date": "1997-05-20",
+  "delist_date": "2023-07-25"
+ },
+ {
+  "code": "600083",
+  "name": "*ST博信",
+  "exchange": "SH",
+  "list_date": "1997-06-06",
+  "delist_date": "2025-03-05"
+ },
+ {
+  "code": "600086",
+  "name": "退市金钰",
+  "exchange": "SH",
+  "list_date": "1997-06-06",
+  "delist_date": "2021-03-18"
+ },
+ {
+  "code": "600087",
+  "name": "退市长油",
+  "exchange": "SH",
+  "list_date": "1997-06-12",
+  "delist_date": "2014-06-05"
+ },
+ {
+  "code": "600090",
+  "name": "退市济堂",
+  "exchange": "SH",
+  "list_date": "1997-06-16",
+  "delist_date": "2022-07-07"
+ },
+ {
+  "code": "600091",
+  "name": "退市明科",
+  "exchange": "SH",
+  "list_date": "1997-07-04",
+  "delist_date": "2022-06-21"
+ },
+ {
+  "code": "600092",
+  "name": "*ST精 密",
+  "exchange": "SH",
+  "list_date": "1997-06-26",
+  "delist_date": "2006-11-30"
+ },
+ {
+  "code": "600093",
+  "name": "退市易见",
+  "exchange": "SH",
+  "list_date": "1997-06-26",
+  "delist_date": "2022-06-23"
+ },
+ {
+  "code": "600102",
+  "name": "莱钢股份",
+  "exchange": "SH",
+  "list_date": "1997-08-28",
+  "delist_date": "2012-02-28"
+ },
+ {
+  "code": "600112",
+  "name": "*ST天成",
+  "exchange": "SH",
+  "list_date": "1997-11-27",
+  "delist_date": "2024-08-15"
+ },
+ {
+  "code": "600122",
+  "name": "*ST宏图",
+  "exchange": "SH",
+  "list_date": "1998-04-20",
+  "delist_date": "2023-06-26"
+ },
+ {
+  "code": "600139",
+  "name": "*ST西源",
+  "exchange": "SH",
+  "list_date": "1998-02-25",
+  "delist_date": "2023-03-27"
+ },
+ {
+  "code": "600145",
+  "name": "退市新亿",
+  "exchange": "SH",
+  "list_date": "1999-09-23",
+  "delist_date": "2022-04-28"
+ },
+ {
+  "code": "600146",
+  "name": "退市环球",
+  "exchange": "SH",
+  "list_date": "1999-07-07",
+  "delist_date": "2022-06-30"
+ },
+ {
+  "code": "600175",
+  "name": "退市美都",
+  "exchange": "SH",
+  "list_date": "1999-04-08",
+  "delist_date": "2020-08-17"
+ },
+ {
+  "code": "600181",
+  "name": "*ST云 大",
+  "exchange": "SH",
+  "list_date": "1998-09-28",
+  "delist_date": "2007-06-01"
+ },
+ {
+  "code": "600190",
+  "name": "退市锦港",
+  "exchange": "SH",
+  "list_date": "1998-05-19",
+  "delist_date": "2025-07-28"
+ },
+ {
+  "code": "600193",
+  "name": "退市创兴",
+  "exchange": "SH",
+  "list_date": "1999-05-27",
+  "delist_date": "2026-07-06"
+ },
+ {
+  "code": "600200",
+  "name": "退市苏吴",
+  "exchange": "SH",
+  "list_date": "1999-04-01",
+  "delist_date": "2025-12-31"
+ },
+ {
+  "code": "600205",
+  "name": "S山东铝",
+  "exchange": "SH",
+  "list_date": "1999-06-30",
+  "delist_date": "2007-04-30"
+ },
+ {
+  "code": "600209",
+  "name": "退市罗顿",
+  "exchange": "SH",
+  "list_date": "1999-03-25",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "600213",
+  "name": "*ST亚星",
+  "exchange": "SH",
+  "list_date": "1999-08-31",
+  "delist_date": "2024-10-17"
+ },
+ {
+  "code": "600220",
+  "name": "ST阳光",
+  "exchange": "SH",
+  "list_date": "1999-09-27",
+  "delist_date": "2024-07-10"
+ },
+ {
+  "code": "600225",
+  "name": "退市卓朗",
+  "exchange": "SH",
+  "list_date": "2000-01-27",
+  "delist_date": "2025-03-06"
+ },
+ {
+  "code": "600240",
+  "name": "退市华业",
+  "exchange": "SH",
+  "list_date": "2000-06-28",
+  "delist_date": "2020-02-06"
+ },
+ {
+  "code": "600242",
+  "name": "退市中昌",
+  "exchange": "SH",
+  "list_date": "2000-12-07",
+  "delist_date": "2023-06-29"
+ },
+ {
+  "code": "600247",
+  "name": "*ST成城",
+  "exchange": "SH",
+  "list_date": "2000-11-23",
+  "delist_date": "2021-03-22"
+ },
+ {
+  "code": "600253",
+  "name": "天方药业",
+  "exchange": "SH",
+  "list_date": "2000-12-27",
+  "delist_date": "2013-07-15"
+ },
+ {
+  "code": "600260",
+  "name": "*ST凯乐",
+  "exchange": "SH",
+  "list_date": "2000-07-06",
+  "delist_date": "2023-02-15"
+ },
+ {
+  "code": "600263",
+  "name": "路桥建设",
+  "exchange": "SH",
+  "list_date": "2000-07-25",
+  "delist_date": "2012-03-01"
+ },
+ {
+  "code": "600270",
+  "name": "外运发展",
+  "exchange": "SH",
+  "list_date": "2000-12-28",
+  "delist_date": "2018-12-28"
+ },
+ {
+  "code": "600275",
+  "name": "退市昌鱼",
+  "exchange": "SH",
+  "list_date": "2000-08-10",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "600277",
+  "name": "ST亿利",
+  "exchange": "SH",
+  "list_date": "2000-07-25",
+  "delist_date": "2024-07-18"
+ },
+ {
+  "code": "600286",
+  "name": "*ST国 瓷",
+  "exchange": "SH",
+  "list_date": "1999-12-09",
+  "delist_date": "2007-05-31"
+ },
+ {
+  "code": "600290",
+  "name": "*ST华仪",
+  "exchange": "SH",
+  "list_date": "2000-11-06",
+  "delist_date": "2024-01-16"
+ },
+ {
+  "code": "600291",
+  "name": "退市西水",
+  "exchange": "SH",
+  "list_date": "2000-07-31",
+  "delist_date": "2022-06-14"
+ },
+ {
+  "code": "600296",
+  "name": "S兰铝",
+  "exchange": "SH",
+  "list_date": "2000-07-19",
+  "delist_date": "2007-04-30"
+ },
+ {
+  "code": "600297",
+  "name": "广汇汽车",
+  "exchange": "SH",
+  "list_date": "2000-11-16",
+  "delist_date": "2024-08-28"
+ },
+ {
+  "code": "600306",
+  "name": "退市商城",
+  "exchange": "SH",
+  "list_date": "2000-12-26",
+  "delist_date": "2024-06-26"
+ },
+ {
+  "code": "600311",
+  "name": "*ST荣华",
+  "exchange": "SH",
+  "list_date": "2001-06-26",
+  "delist_date": "2023-03-27"
+ },
+ {
+  "code": "600317",
+  "name": "营口港",
+  "exchange": "SH",
+  "list_date": "2002-01-31",
+  "delist_date": "2021-01-29"
+ },
+ {
+  "code": "600321",
+  "name": "正源股份",
+  "exchange": "SH",
+  "list_date": "2001-05-24",
+  "delist_date": "2024-06-27"
+ },
+ {
+  "code": "600355",
+  "name": "*ST精伦",
+  "exchange": "SH",
+  "list_date": "2002-06-13",
+  "delist_date": "2026-04-27"
+ },
+ {
+  "code": "600357",
+  "name": "承德钒钛",
+  "exchange": "SH",
+  "list_date": "2002-09-06",
+  "delist_date": "2009-12-29"
+ },
+ {
+  "code": "600385",
+  "name": "退市金泰",
+  "exchange": "SH",
+  "list_date": "2001-07-23",
+  "delist_date": "2022-07-07"
+ },
+ {
+  "code": "600387",
+  "name": "退市海越",
+  "exchange": "SH",
+  "list_date": "2004-02-18",
+  "delist_date": "2025-07-11"
+ },
+ {
+  "code": "600393",
+  "name": "ST粤泰",
+  "exchange": "SH",
+  "list_date": "2001-03-19",
+  "delist_date": "2023-07-18"
+ },
+ {
+  "code": "600401",
+  "name": "退市海润",
+  "exchange": "SH",
+  "list_date": "2003-09-24",
+  "delist_date": "2019-07-15"
+ },
+ {
+  "code": "600421",
+  "name": "退市华嵘",
+  "exchange": "SH",
+  "list_date": "2004-06-07",
+  "delist_date": "2026-06-26"
+ },
+ {
+  "code": "600432",
+  "name": "退市吉恩",
+  "exchange": "SH",
+  "list_date": "2003-09-05",
+  "delist_date": "2018-07-13"
+ },
+ {
+  "code": "600462",
+  "name": "退市九有",
+  "exchange": "SH",
+  "list_date": "2003-09-03",
+  "delist_date": "2025-07-21"
+ },
+ {
+  "code": "600466",
+  "name": "*ST蓝光",
+  "exchange": "SH",
+  "list_date": "2001-02-12",
+  "delist_date": "2023-06-06"
+ },
+ {
+  "code": "600472",
+  "name": "包头铝业",
+  "exchange": "SH",
+  "list_date": "2005-05-09",
+  "delist_date": "2007-12-26"
+ },
+ {
+  "code": "600485",
+  "name": "*ST信威",
+  "exchange": "SH",
+  "list_date": "2003-08-07",
+  "delist_date": "2021-06-01"
+ },
+ {
+  "code": "600532",
+  "name": "退市未来",
+  "exchange": "SH",
+  "list_date": "2002-10-31",
+  "delist_date": "2023-06-28"
+ },
+ {
+  "code": "600553",
+  "name": "太行水泥",
+  "exchange": "SH",
+  "list_date": "2002-08-22",
+  "delist_date": "2011-02-18"
+ },
+ {
+  "code": "600555",
+  "name": "退市海创",
+  "exchange": "SH",
+  "list_date": "1999-01-18",
+  "delist_date": "2022-07-14"
+ },
+ {
+  "code": "600565",
+  "name": "ST迪马",
+  "exchange": "SH",
+  "list_date": "2002-07-23",
+  "delist_date": "2024-08-07"
+ },
+ {
+  "code": "600591",
+  "name": "*ST上航",
+  "exchange": "SH",
+  "list_date": "2002-10-11",
+  "delist_date": "2010-01-25"
+ },
+ {
+  "code": "600599",
+  "name": "退市熊猫",
+  "exchange": "SH",
+  "list_date": "2001-08-28",
+  "delist_date": "2026-06-26"
+ },
+ {
+  "code": "600607",
+  "name": "上实医药",
+  "exchange": "SH",
+  "list_date": "1992-03-27",
+  "delist_date": "2010-02-12"
+ },
+ {
+  "code": "600608",
+  "name": "退市沪科",
+  "exchange": "SH",
+  "list_date": "1992-03-27",
+  "delist_date": "2026-07-03"
+ },
+ {
+  "code": "600614",
+  "name": "退市鹏起",
+  "exchange": "SH",
+  "list_date": "1992-07-28",
+  "delist_date": "2021-07-22"
+ },
+ {
+  "code": "600625",
+  "name": "PT水  仙",
+  "exchange": "SH",
+  "list_date": "1993-01-06",
+  "delist_date": "2001-04-25"
+ },
+ {
+  "code": "600627",
+  "name": "上电股份",
+  "exchange": "SH",
+  "list_date": "1993-01-18",
+  "delist_date": "2008-11-26"
+ },
+ {
+  "code": "600631",
+  "name": "百联股份",
+  "exchange": "SH",
+  "list_date": "1993-02-19",
+  "delist_date": "2011-08-23"
+ },
+ {
+  "code": "600632",
+  "name": "华联商厦",
+  "exchange": "SH",
+  "list_date": "1993-02-19",
+  "delist_date": "2004-11-18"
+ },
+ {
+  "code": "600634",
+  "name": "退市富控",
+  "exchange": "SH",
+  "list_date": "1993-03-04",
+  "delist_date": "2021-07-22"
+ },
+ {
+  "code": "600636",
+  "name": "退市国化",
+  "exchange": "SH",
+  "list_date": "1993-03-16",
+  "delist_date": "2026-06-29"
+ },
+ {
+  "code": "600646",
+  "name": "ST国  嘉",
+  "exchange": "SH",
+  "list_date": "1993-05-04",
+  "delist_date": "2003-09-23"
+ },
+ {
+  "code": "600647",
+  "name": "退市同达",
+  "exchange": "SH",
+  "list_date": "1993-05-04",
+  "delist_date": "2024-07-03"
+ },
+ {
+  "code": "600652",
+  "name": "退市游久",
+  "exchange": "SH",
+  "list_date": "1990-12-19",
+  "delist_date": "2022-06-21"
+ },
+ {
+  "code": "600656",
+  "name": "退市博元",
+  "exchange": "SH",
+  "list_date": "1990-12-19",
+  "delist_date": "2016-05-13"
+ },
+ {
+  "code": "600659",
+  "name": "*ST花 雕",
+  "exchange": "SH",
+  "list_date": "1993-05-28",
+  "delist_date": "2006-03-23"
+ },
+ {
+  "code": "600669",
+  "name": "*ST鞍 成",
+  "exchange": "SH",
+  "list_date": "1993-08-06",
+  "delist_date": "2004-09-15"
+ },
+ {
+  "code": "600670",
+  "name": "*ST斯 达",
+  "exchange": "SH",
+  "list_date": "1993-08-09",
+  "delist_date": "2004-09-24"
+ },
+ {
+  "code": "600672",
+  "name": "*ST华 圣",
+  "exchange": "SH",
+  "list_date": "1993-09-17",
+  "delist_date": "2005-08-05"
+ },
+ {
+  "code": "600677",
+  "name": "*ST航通",
+  "exchange": "SH",
+  "list_date": "1993-09-28",
+  "delist_date": "2021-03-18"
+ },
+ {
+  "code": "600680",
+  "name": "*ST上普",
+  "exchange": "SH",
+  "list_date": "1993-10-18",
+  "delist_date": "2019-05-24"
+ },
+ {
+  "code": "600687",
+  "name": "退市刚泰",
+  "exchange": "SH",
+  "list_date": "1993-11-08",
+  "delist_date": "2021-03-04"
+ },
+ {
+  "code": "600695",
+  "name": "退市绿庭",
+  "exchange": "SH",
+  "list_date": "1993-11-22",
+  "delist_date": "2022-06-15"
+ },
+ {
+  "code": "600696",
+  "name": "退市岩石",
+  "exchange": "SH",
+  "list_date": "1993-12-06",
+  "delist_date": "2026-06-29"
+ },
+ {
+  "code": "600700",
+  "name": "*ST数 码",
+  "exchange": "SH",
+  "list_date": "1996-04-30",
+  "delist_date": "2005-09-20"
+ },
+ {
+  "code": "600701",
+  "name": "退市工新",
+  "exchange": "SH",
+  "list_date": "1996-05-28",
+  "delist_date": "2021-05-06"
+ },
+ {
+  "code": "600705",
+  "name": "中航产融",
+  "exchange": "SH",
+  "list_date": "1996-05-16",
+  "delist_date": "2025-05-27"
+ },
+ {
+  "code": "600709",
+  "name": "ST生  态",
+  "exchange": "SH",
+  "list_date": "1996-06-18",
+  "delist_date": "2003-05-26"
+ },
+ {
+  "code": "600723",
+  "name": "首商股份",
+  "exchange": "SH",
+  "list_date": "1996-07-16",
+  "delist_date": "2021-10-22"
+ },
+ {
+  "code": "600747",
+  "name": "退市大控",
+  "exchange": "SH",
+  "list_date": "1996-09-16",
+  "delist_date": "2019-12-13"
+ },
+ {
+  "code": "600752",
+  "name": "*ST哈 慈",
+  "exchange": "SH",
+  "list_date": "1996-09-25",
+  "delist_date": "2005-09-22"
+ },
+ {
+  "code": "600762",
+  "name": "*ST金 荔",
+  "exchange": "SH",
+  "list_date": "1996-10-25",
+  "delist_date": "2007-11-20"
+ },
+ {
+  "code": "600766",
+  "name": "退市园城",
+  "exchange": "SH",
+  "list_date": "1996-10-28",
+  "delist_date": "2024-07-03"
+ },
+ {
+  "code": "600767",
+  "name": "退市运盛",
+  "exchange": "SH",
+  "list_date": "1996-11-15",
+  "delist_date": "2023-06-29"
+ },
+ {
+  "code": "600772",
+  "name": "*ST龙 昌",
+  "exchange": "SH",
+  "list_date": "1996-11-04",
+  "delist_date": "2006-11-30"
+ },
+ {
+  "code": "600781",
+  "name": "退市辅仁",
+  "exchange": "SH",
+  "list_date": "1996-12-18",
+  "delist_date": "2023-06-28"
+ },
+ {
+  "code": "600786",
+  "name": "东锅退市",
+  "exchange": "SH",
+  "list_date": "1996-12-27",
+  "delist_date": "2008-03-24"
+ },
+ {
+  "code": "600788",
+  "name": "*ST达 曼",
+  "exchange": "SH",
+  "list_date": "1996-12-30",
+  "delist_date": "2005-03-25"
+ },
+ {
+  "code": "600799",
+  "name": "*ST龙 科",
+  "exchange": "SH",
+  "list_date": "1997-04-16",
+  "delist_date": "2006-01-04"
+ },
+ {
+  "code": "600804",
+  "name": "退市鹏博",
+  "exchange": "SH",
+  "list_date": "1994-01-03",
+  "delist_date": "2025-07-03"
+ },
+ {
+  "code": "600806",
+  "name": "退市昆机",
+  "exchange": "SH",
+  "list_date": "1994-01-03",
+  "delist_date": "2018-07-13"
+ },
+ {
+  "code": "600811",
+  "name": "*ST东方",
+  "exchange": "SH",
+  "list_date": "1994-01-06",
+  "delist_date": "2025-04-30"
+ },
+ {
+  "code": "600813",
+  "name": "ST鞍一工",
+  "exchange": "SH",
+  "list_date": "1994-01-14",
+  "delist_date": "2002-09-16"
+ },
+ {
+  "code": "600823",
+  "name": "*ST世茂",
+  "exchange": "SH",
+  "list_date": "1994-02-04",
+  "delist_date": "2024-06-14"
+ },
+ {
+  "code": "600832",
+  "name": "东方明珠",
+  "exchange": "SH",
+  "list_date": "1994-02-24",
+  "delist_date": "2015-05-20"
+ },
+ {
+  "code": "600836",
+  "name": "*ST易连",
+  "exchange": "SH",
+  "list_date": "1994-02-24",
+  "delist_date": "2024-07-11"
+ },
+ {
+  "code": "600837",
+  "name": "海通证券",
+  "exchange": "SH",
+  "list_date": "1994-02-24",
+  "delist_date": "2025-03-04"
+ },
+ {
+  "code": "600840",
+  "name": "新湖创业",
+  "exchange": "SH",
+  "list_date": "1994-03-11",
+  "delist_date": "2009-08-27"
+ },
+ {
+  "code": "600842",
+  "name": "中西药业",
+  "exchange": "SH",
+  "list_date": "1994-03-11",
+  "delist_date": "2010-02-12"
+ },
+ {
+  "code": "600852",
+  "name": "*ST中 川",
+  "exchange": "SH",
+  "list_date": "1994-04-04",
+  "delist_date": "2005-09-16"
+ },
+ {
+  "code": "600856",
+  "name": "退市中天",
+  "exchange": "SH",
+  "list_date": "1994-04-25",
+  "delist_date": "2022-06-22"
+ },
+ {
+  "code": "600870",
+  "name": "退市厦华",
+  "exchange": "SH",
+  "list_date": "1995-02-28",
+  "delist_date": "2022-06-30"
+ },
+ {
+  "code": "600878",
+  "name": "*ST北 科",
+  "exchange": "SH",
+  "list_date": "1995-10-13",
+  "delist_date": "2004-09-15"
+ },
+ {
+  "code": "600890",
+  "name": "退市中房",
+  "exchange": "SH",
+  "list_date": "1996-03-18",
+  "delist_date": "2022-06-21"
+ },
+ {
+  "code": "600891",
+  "name": "退市秋林",
+  "exchange": "SH",
+  "list_date": "1996-03-25",
+  "delist_date": "2021-05-12"
+ },
+ {
+  "code": "600896",
+  "name": "退市海医",
+  "exchange": "SH",
+  "list_date": "1996-05-03",
+  "delist_date": "2022-07-25"
+ },
+ {
+  "code": "600898",
+  "name": "*ST美讯",
+  "exchange": "SH",
+  "list_date": "1996-04-18",
+  "delist_date": "2025-02-10"
+ },
+ {
+  "code": "600899",
+  "name": "*ST信 联",
+  "exchange": "SH",
+  "list_date": "1996-04-26",
+  "delist_date": "2005-09-21"
+ },
+ {
+  "code": "600978",
+  "name": "*ST宜生",
+  "exchange": "SH",
+  "list_date": "2004-08-24",
+  "delist_date": "2021-03-22"
+ },
+ {
+  "code": "600991",
+  "name": "广汽长丰",
+  "exchange": "SH",
+  "list_date": "2004-06-14",
+  "delist_date": "2012-03-20"
+ },
+ {
+  "code": "601028",
+  "name": "玉龙股份",
+  "exchange": "SH",
+  "list_date": "2011-11-07",
+  "delist_date": "2025-05-27"
+ },
+ {
+  "code": "601258",
+  "name": "*ST庞大",
+  "exchange": "SH",
+  "list_date": "2011-04-28",
+  "delist_date": "2023-06-30"
+ },
+ {
+  "code": "601268",
+  "name": "*ST二重",
+  "exchange": "SH",
+  "list_date": "2010-02-02",
+  "delist_date": "2015-05-21"
+ },
+ {
+  "code": "601299",
+  "name": "中国北车",
+  "exchange": "SH",
+  "list_date": "2009-12-29",
+  "delist_date": "2015-05-20"
+ },
+ {
+  "code": "601558",
+  "name": "退市锐电",
+  "exchange": "SH",
+  "list_date": "2011-01-13",
+  "delist_date": "2020-07-03"
+ },
+ {
+  "code": "601989",
+  "name": "中国重工",
+  "exchange": "SH",
+  "list_date": "2009-12-16",
+  "delist_date": "2025-09-05"
+ },
+ {
+  "code": "603003",
+  "name": "退市龙宇",
+  "exchange": "SH",
+  "list_date": "2012-08-17",
+  "delist_date": "2025-07-03"
+ },
+ {
+  "code": "603056",
+  "name": "德邦股份",
+  "exchange": "SH",
+  "list_date": "2018-01-16",
+  "delist_date": "2026-03-31"
+ },
+ {
+  "code": "603133",
+  "name": "退市碳元",
+  "exchange": "SH",
+  "list_date": "2017-03-20",
+  "delist_date": "2024-07-03"
+ },
+ {
+  "code": "603157",
+  "name": "退市拉夏",
+  "exchange": "SH",
+  "list_date": "2017-09-25",
+  "delist_date": "2022-05-24"
+ },
+ {
+  "code": "603388",
+  "name": "*ST元成",
+  "exchange": "SH",
+  "list_date": "2017-03-24",
+  "delist_date": "2025-12-05"
+ },
+ {
+  "code": "603555",
+  "name": "ST贵人",
+  "exchange": "SH",
+  "list_date": "2014-01-24",
+  "delist_date": "2024-03-29"
+ },
+ {
+  "code": "603603",
+  "name": "退市博天",
+  "exchange": "SH",
+  "list_date": "2017-02-17",
+  "delist_date": "2024-04-25"
+ },
+ {
+  "code": "603963",
+  "name": "*ST大药",
+  "exchange": "SH",
+  "list_date": "2017-09-22",
+  "delist_date": "2025-03-21"
+ },
+ {
+  "code": "603996",
+  "name": "退市中新",
+  "exchange": "SH",
+  "list_date": "2015-12-22",
+  "delist_date": "2022-05-24"
+ },
+ {
+  "code": "605081",
+  "name": "退市太和",
+  "exchange": "SH",
+  "list_date": "2021-02-09",
+  "delist_date": "2026-07-03"
+ },
+ {
+  "code": "688086",
+  "name": "退市紫晶",
+  "exchange": "SH",
+  "list_date": "2020-02-26",
+  "delist_date": "2023-07-07"
+ },
+ {
+  "code": "688287",
+  "name": "退市观典",
+  "exchange": "SH",
+  "list_date": "2022-05-25",
+  "delist_date": "2026-06-10"
+ },
+ {
+  "code": "688555",
+  "name": "退市泽达",
+  "exchange": "SH",
+  "list_date": "2020-06-23",
+  "delist_date": "2023-07-07"
+ },
+ {
+  "code": "900935",
+  "name": "阳晨Ｂ股",
+  "exchange": "SH",
+  "list_date": "1995-07-27",
+  "delist_date": "2016-12-16"
+ },
+ {
+  "code": "900949",
+  "name": "东电Ｂ股",
+  "exchange": "SH",
+  "list_date": "1997-09-23",
+  "delist_date": "2013-11-07"
+ },
+ {
+  "code": "900950",
+  "name": "新城Ｂ股",
+  "exchange": "SH",
+  "list_date": "1997-10-16",
+  "delist_date": "2015-11-23"
+ },
+ {
+  "code": "900951",
+  "name": "退市大化",
+  "exchange": "SH",
+  "list_date": "1997-10-21",
+  "delist_date": "2020-08-28"
+ },
+ {
+  "code": "900953",
+  "name": "凯马Ｂ",
+  "exchange": "SH",
+  "list_date": "1998-06-24",
+  "delist_date": "2024-07-05"
+ },
+ {
+  "code": "900956",
+  "name": "东贝Ｂ股",
+  "exchange": "SH",
+  "list_date": "1999-07-15",
+  "delist_date": "2020-11-23"
+ },
+ {
+  "code": "900957",
+  "name": "*ST凌云B",
+  "exchange": "SH",
+  "list_date": "2000-07-28",
+  "delist_date": "2025-07-04"
+ }
+]

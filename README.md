@@ -21,6 +21,18 @@
 > ② 修复逻辑错误。**不接受任何为了改善收益/Sharpe 的参数或语义调整**
 > （判准见第 0 节纪律 4）。
 
+> ### 仓库边界（2026-11-09 拆分）
+>
+> 本仓库是 2026-11-09 从 `D:/python_prog/dow-theory` **物理拆出**的 Regime 独立项目；
+> 原仓库已收敛为 ENTRY-PHASE 入场线（B 类信号），两者互不构成前置条件。
+>
+> **缓存迁移提示**：本仓库只随版本控制携带 6 个指数 parquet（`cache/*.parquet`，约 1.6 MB）。
+> `cache/stocks`（HS300 个股，655 MB）、`cache/qfq`、`cache/raw`、`cache/factors` 仍在
+> `D:/python_prog/dow-theory/cache/`。因此 P11-C / P12 相关脚本
+> （`run_p11c.py`、`run_p12_survivorship.py`、`research/overlay_regime.py`）在本仓库首次运行前，
+> 需先跑 `data/stock_loader.py --universe hs300`（约 5 分钟）重建 `cache/stocks`，
+> 或把 `data/stock_loader.py` 的 `CACHE_DIR` 指向上游缓存。
+
 ---
 
 ## 0. 六条不可商量的纪律

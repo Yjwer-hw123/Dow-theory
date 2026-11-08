@@ -1,0 +1,23 @@
+{
+  "phase": "EP-02d",
+  "title": "B 类交易止损规则预注册",
+  "file": "out/entry_phase_02/EP02C_STOP_PREREGISTER.md",
+  "sha256": "0FF76B97E86AC8266208156C71B4B7D48389CA6F72CE73F3A8519ED7540D1993",
+  "frozen_at": "2026-11-08",
+  "status": "FROZEN_BEFORE_RUN",
+  "rules": [
+    {"id": "S1", "start_bar": 10, "threshold_pct": -6},
+    {"id": "S2", "start_bar": 10, "threshold_pct": -8, "role": "primary_hypothesis"},
+    {"id": "S3", "start_bar": 20, "threshold_pct": -6},
+    {"id": "S4", "start_bar": 20, "threshold_pct": -8},
+    {"id": "S5", "start_bar": 20, "threshold_pct": -10},
+    {"id": "B0", "start_bar": null, "threshold_pct": null, "role": "baseline_no_stop"}
+  ],
+  "execution": {
+    "primary": "confirm_on_close_sell_next_open",
+    "secondary": "intraday_touch_limit_price_upper_bound_only"
+  },
+  "gates": ["G1_no_profit_cut", "G2_mdd_drop_ge_5pp_and_15pct", "G3_validate_test_expectation_ge_base", "G4_bad_years_le_9_of_20", "G5_net_of_whipsaw_positive"],
+  "backtest_run": false,
+  "evidence_report": "out/entry_phase_02/P2C_HOLDING_ANATOMY_REPORT.md"
+}

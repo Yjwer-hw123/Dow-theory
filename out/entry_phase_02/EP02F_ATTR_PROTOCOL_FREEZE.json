@@ -1,0 +1,47 @@
+{
+  "phase": "EP-02f",
+  "title": "提前释放仓位的收益来源归因",
+  "frozen_at": "2026-11-08",
+  "status": "FROZEN_PREREGISTERED",
+  "protocol_md": "out/entry_phase_02/EP02F_ATTR_PROTOCOL.md",
+  "protocol_sha256": "7F2BC93357A933B82FF9A74F6C748058555121473091B7F758D19F37EBD6C3F8",
+  "upstream": {
+    "ep02e_protocol_sha256": "61A87D33AFF14CA93798996EECC9BE64E676A902971619C0C42F8A98A60BDC6B",
+    "ep02d_decision_sha256": "7035306C75647009411DA5433C4FC315FECEAEDB22E2842A46CE53556BB5A294",
+    "ep02d_script_sha256": "240D4D616F4D4F185B8BA62DE03EA0F30ED988200746F516EB495D8AA0541213"
+  },
+  "objects": {
+    "P0": "B0 出场：60 bar 收盘卖；原始资金节律",
+    "P1": "ATR20×2.0 止损 + 2.5R 止盈；实际释放",
+    "P2": "ATR20×2.0 止损 + 2.5R 止盈；卖出所得冻结至 B0 的 60 bar 回款日次日（诊断反事实，不可投资）"
+  },
+  "questions": [
+    "Q1 提前退出释放了哪些信号（新增/挤出/竞争原因）",
+    "Q2 提前退出放弃了多少 60 bar 续持收益（按 stop/tp 拆分）",
+    "Q3 新增成交的净利、资金日收益率与集中度",
+    "Q4 出场效应与容量效应的净值拆解"
+  ],
+  "decision_rules": {
+    "G1": "Δtotal>0 且 容量占比≥60%",
+    "G2": "新增净利>0 且 新增资金日收益率≥P0 全部成交资金日收益率",
+    "G3": "剔除2006 cohort 与新增净利前2笔后新增净利仍>0，且容量占比≥50%",
+    "G4": "仅报告提前退出损益的 stop/tp 拆分"
+  },
+  "verdicts": ["CAPACITY_REAL_SIGNAL", "MIXED", "PATH_LUCK_SUSPECT"],
+  "reproduction_gates": {
+    "P0_final_nav": 5719552.238656651,
+    "P0_fills": 201,
+    "P1_final_nav": 7629540.673526994,
+    "P1_fills": 370,
+    "relative_tolerance": 0.000000001
+  },
+  "forbidden": [
+    "扫描 ATR 倍数或新增止损/止盈阈值",
+    "研究其他出场规则",
+    "修改 B0 / ATR×2 / 3 仓 / 1/3 NAV / 先到先得",
+    "增加市场过滤器或按年份/行业剔除信号",
+    "把 P2 当作可投资方案",
+    "因 Q2 结果反向调整止盈倍数",
+    "改写 EP-02d 或 EP-02e 的冻结结论"
+  ]
+}

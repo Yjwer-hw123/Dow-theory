@@ -1,0 +1,45 @@
+{
+  "phase": "EP-02g",
+  "title": "持有期限与市场周期的交互作用",
+  "frozen_at": "2026-11-08",
+  "status": "FROZEN_PREREGISTERED",
+  "protocol_md": "out/entry_phase_02/EP02G_HORIZON_CYCLE_PROTOCOL.md",
+  "protocol_sha256": "FA8C04BB813998D89321ECCFB27554F86B6899E0964EE949A3561A654E933029",
+  "upstream": {
+    "ep02f_protocol_sha256": "7F2BC93357A933B82FF9A74F6C748058555121473091B7F758D19F37EBD6C3F8",
+    "ep02e_protocol_sha256": "61A87D33AFF14CA93798996EECC9BE64E676A902971619C0C42F8A98A60BDC6B"
+  },
+  "objects": {
+    "horizons": [10, 15, 20, 30, 60],
+    "exit_rule": "入场日起第 H 根日线收盘卖出，无止损无止盈",
+    "portfolio": "100万/3仓/每笔1/3 NAV/同日先到先得/回款次日可用/base 成本",
+    "signal_pool": "冻结 11,419 个 B 类信号；要求入场后至少 60 根 bar 可用"
+  },
+  "regime": {
+    "primary": "沪指前 120 交易日收益 ±10%：>=+10% 牛，<=-10% 熊，其余震荡",
+    "sensitivity": "沪指前 250 交易日收益 ±10%",
+    "causality": "只用入场日及之前数据"
+  },
+  "rules": {
+    "S1": "CAGR(15) > 1.5×max(CAGR(10), CAGR(20)) → 孤立尖峰",
+    "S2": "五个期限 CAGR 单调递增或单调递减",
+    "S3": "至少 3 个期限 CAGR 高于沪指同期 5.62%",
+    "C1": "15 日的日度对数财富中单一市场状态 > 60%",
+    "C2": "15 日在至少两个市场状态的期间年化高于沪指同期"
+  },
+  "labels": ["FRAGILE_SPIKE", "STABLE_PLATEAU", "CONDITIONAL", "BROAD"],
+  "reproduction_gates": {
+    "H60_final_nav": 5719552.238656651,
+    "H60_fills": 201,
+    "relative_tolerance": 0.000000001,
+    "signal_count": 11419
+  },
+  "forbidden": [
+    "扫描 {10,15,20,30,60} 以外的期限",
+    "新增止损、止盈、市场过滤器或牛熊开关",
+    "修改 3 仓、1/3 NAV、先到先得、成本口径、信号定义",
+    "调整市场状态窗口或阈值",
+    "输出最优期限的采用建议",
+    "改写 EP-02d/02e/02f 冻结结论"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+ "meta": {
+  "report": "A股多周期趋势交易框架 STEP 0 数据可行性审计",
+  "generated_at": "2026-11-06",
+  "scope": "仅 STEP 0；只做只读审计与小范围接口可用性探测；未写策略、未跑回测",
+  "data_root": "d:/python_prog/dow-theory",
+  "stock_snapshot_last_bar": "2026-09-30",
+  "index_snapshot_last_bar": "2026-09-24"
+ },
+ "verdict": {
+  "result": "partial_pass",
+  "summary": "数据地基可建，但不能直接进入 STEP 1；前复权覆盖、历史ST、股票池口径是阻断项",
+  "blockers": [
+   "前复权面板仅覆盖 60/5555 只（1.1%），未复权数据存在大量除权跳变",
+   "历史 ST 仅深市可重建；沪市无批量历史 ST/简称变更数据",
+   "股票池存在 PIT 全A / wide 708 / HS300 280 三套口径，未冻结",
+   "板块分类代码与申万指数代码(801/850)的映射未建立",
+   "基准指数缓存比个股末日早 4 个交易日"
+  ],
+  "not_blocking_now": [
+   "交易成本参数为空，属于 STEP 4 前必须补齐，不影响 STEP 1-3 的事件研究",
+   "少量坏 bar、零成交量、amount 近似，清洗后可解决",
+   "数据截至 2026-09-30，固定历史研究可用；不能用于当前时点信号"
+  ]
+ },
+ "universe": {
+  "cached_total": 5555,
+  "cached_live_sh_sz_a": 5222,
+  "cached_delisted_sh_sz_a": 333,
+  "all_a_current_list": 5569,
+  "all_a_bse_920_not_cached": 347,
+  "all_a_sh_sz_live": 5222,
+  "delisted_meta": 361,
+  "delisted_sh_sz_a": 333,
+  "delisted_b_or_bse_in_meta_not_cached": 28,
+  "bse_and_b_shares_in_cache": 0,
+  "pools": {
+   "hs300_no_star": {
+    "n": 280,
+    "cached": 280,
+    "n_ge_250": 279,
+    "n_ge_500": 277,
+    "last_max": "2026-09-24"
+   },
+   "zz500_no_star": {
+    "n": 428,
+    "cached": 428,
+    "n_ge_250": 424,
+    "n_ge_500": 422,
+    "last_max": "2026-09-30"
+   },
+   "wide_no_star": {
+    "n": 708,
+    "cached": 708,
+    "n_ge_250": 703,
+    "n_ge_500": 699,
+    "last_max": "2026-09-30"
+   },
+   "pit_all_a_live": {
+    "requested": 5569,
+    "cached": 5222,
+    "n_ge_250": 5130,
+    "n_ge_500": 5046,
+    "last_max": "2026-09-30"
+   },
+   "pit_delisted": {
+    "requested": 333,
+    "cached": 333,
+    "n_ge_250": 333,
+    "n_ge_500": 333,
+    "last_max": "2026-07-16"
+   }
+  },
+  "note": "wide = hs300 ∪ zz500，两个池无重叠；all_a 含 347 只北交所 920xxx，当前缓存未纳入"
+ },
+ "coverage": {
+  "files_parsed": 5555,
+  "bad_files": 0,
+  "duplicate_date_files": 0,
+  "non_monotonic_files": 0,
+  "first_min": "1990-12-19",
+  "first_max": "2026-09-22",
+  "last_min": "1997-02-28",
+  "last_max": "2026-09-30",
+  "n_lt_60_bars": 23,
+  "n_ge_60_bars": 5532,
+  "n_ge_250_bars": 5463,
+  "n_ge_500_bars": 5379,
+  "n_ge_1000_bars": 4945,
+  "last_bar_2026_09": 5221,
+  "last_bar_before_2026_09": 334,
+  "note": "新浪 datalen=6000 使部分长历史存活股实际起始约 2001 年；2005+ 研究区间不受影响，1990s 不完整"
+ },
+ "raw_quality": {
+  "files_with_any_daily_return_lt_-20pct": 4346,
+  "files_total": 5555,
+  "share_files_lt_-20pct": 0.782,
+  "events_daily_return_lt_-20pct": 10924,
+  "events_daily_return_gt_20pct": 5059,
+  "files_with_nonpositive_close": 2,
+  "rows_with_nonpositive_close": 3927,
+  "nonpositive_close_examples": {
+   "000001": 3370,
+   "000333": 557
+  },
+  "files_with_ohlc_violation": 6,
+  "rows_with_ohlc_violation": 9,
+  "files_with_zero_volume_bar": 34,
+  "rows_zero_volume": 43,
+  "files_amount_not_equal_volume_close": 4,
+  "files_amount_equal_volume_close": 5551,
+  "note": "cache/stocks 名义上为不复权实际成交价；含除权跳变与少量坏数据；amount 绝大多数为 volume*close 近似值；4 个文件可能为东财真实成交额或异常值"
+ },
+ "qfq": {
+  "files": 60,
+  "files_total": 5555,
+  "coverage_pct": 1.1,
+  "in_hs300": 3,
+  "in_zz500": 9,
+  "in_wide": 12,
+  "delisted_included": 13,
+  "max_abs_close_error_vs_raw_over_factor": 0.0,
+  "max_abs_amount_error": 0.0,
+  "events_lt_-20pct": 13,
+  "observations": 342256,
+  "last_max": "2026-09-30",
+  "last_min": "2001-06-08",
+  "builder": "d:/python_prog/dow-theory/scripts/build_qfq.py",
+  "note": "qfq=raw/f；amount 保持不变；volume 按因子放大，因此量能过滤必须使用 raw volume"
+ },
+ "indices": {
+  "files": 6,
+  "all_last_bar": "2026-09-24",
+  "000300": {
+   "n": 6000,
+   "first": "2002-01-04",
+   "last": "2026-09-24",
+   "zero_volume_bars": 721
+  },
+  "000001": {
+   "n": 6000,
+   "first": "2002-01-04",
+   "last": "2026-09-24",
+   "zero_volume_bars": 0
+  },
+  "399001": {
+   "n": 6000,
+   "first": "2002-01-04",
+   "last": "2026-09-24",
+   "zero_volume_bars": 2
+  },
+  "000905": {
+   "n": 5279,
+   "first": "2005-01-04",
+   "last": "2026-09-24",
+   "zero_volume_bars": 0
+  },
+  "000510": {
+   "n": 5279,
+   "first": "2005-01-04",
+   "last": "2026-09-24",
+   "zero_volume_bars": 0
+  },
+  "000852": {
+   "n": 2906,
+   "first": "2014-10-17",
+   "last": "2026-09-24",
+   "zero_volume_bars": 0
+  },
+  "note": "个股末日 2026-09-30，指数末日 2026-09-24；相对强度在 9/25-9/30 无法直接计算"
+ },
+ "sector": {
+  "membership_source": "akshare.stock_industry_clf_hist_sw / 申万宏源 StockClassifyUse_stock.xls",
+  "membership_rows": 12933,
+  "membership_symbols": 5937,
+  "membership_industry_codes": 553,
+  "membership_date_min": "1990-01-01",
+  "membership_date_max": "2026-11-02",
+  "membership_cached_coverage": "5555/5555",
+  "symbols_with_one_row": 2023,
+  "symbols_with_multiple_rows": 3914,
+  "sector_index_source": "akshare.index_hist_sw",
+  "sector_index_level1_count": 31,
+  "sector_index_level2_count": 131,
+  "sector_index_level3_count": 335,
+  "sector_index_probe": {
+   "symbol": "801010",
+   "rows": 6487,
+   "first": "1999-12-30",
+   "last": "2026-11-06"
+  },
+  "gap": "分类代码(如480301)与指数代码(801xxx/850xxx)的crosswalk未建立；板块层级未冻结；数据未落盘",
+  "note": "探测时本机代理证书链未通过默认校验，使用了一次 verify=False；正式落盘需配置可信CA，不得沿用临时做法"
+ },
+ "st": {
+  "current_st_count": 204,
+  "current_st_sh": 82,
+  "current_st_sz": 119,
+  "current_st_other": 3,
+  "sz_name_change_source": "akshare.stock_info_sz_change_name('简称变更')",
+  "sz_rows": 7502,
+  "sz_codes": 3130,
+  "sz_st_related_rows": 2284,
+  "sz_st_codes": 673,
+  "sz_date_min": "1994-01-03",
+  "sz_date_max": "2026-11-06",
+  "sh_bulk_history": "未找到；stock_info_change_name 仅返回无日期的曾用名",
+  "daily_historical_st_flag": "不可完整构建",
+  "note": "深市可按简称变更事件重建ST区间；沪市历史ST缺口是阻断项。不得用当前ST快照反推历史"
+ },
+ "delisted": {
+  "meta_n": 361,
+  "cached_n": 333,
+  "last_bar_equals_official_delist_date": 0,
+  "last_bar_within_5_days": 95,
+  "last_bar_more_than_30_days_before_official_date": 129,
+  "note": "官方终止上市日不等于最后交易日；PIT与强制退出应以末根可交易bar为准"
+ },
+ "calendar": {
+  "index_000300_dates": 6000,
+  "index_000300_first": "2002-01-04",
+  "index_000300_last": "2026-09-24",
+  "sample_stock_date_union": 7926,
+  "sample_stock_dates_after_2005_not_in_index": 3,
+  "note": "2002+ 可用000300作为交易日历；停牌=个股当日无bar，不能与市场休市混淆"
+ }
+}

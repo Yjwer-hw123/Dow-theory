@@ -1,0 +1,1007 @@
+{
+  "generated_at": "2026-11-07 16:41:16",
+  "sample_n": 200,
+  "n_rows": 21167,
+  "n_episodes": 854,
+  "n_decision_dates": 1041,
+  "n_classifiable_dates": 942,
+  "T1": {
+    "name": "T1",
+    "passed": true,
+    "cuts": [
+      {
+        "cut": "2012-12-31",
+        "checked": 4760,
+        "missing": 0,
+        "mismatches": [],
+        "passed": true
+      },
+      {
+        "cut": "2017-12-31",
+        "checked": 10001,
+        "missing": 0,
+        "mismatches": [],
+        "passed": true
+      },
+      {
+        "cut": "2021-12-31",
+        "checked": 13620,
+        "missing": 0,
+        "mismatches": [],
+        "passed": true
+      }
+    ]
+  },
+  "T2": {
+    "name": "T2",
+    "passed": true,
+    "cuts": [
+      {
+        "cut": "2014-12-31",
+        "checked": 6790,
+        "missing": 0,
+        "mismatches": [],
+        "passed": true
+      },
+      {
+        "cut": "2019-12-31",
+        "checked": 11102,
+        "missing": 0,
+        "mismatches": [],
+        "passed": true
+      }
+    ]
+  },
+  "T3": {
+    "name": "T3",
+    "passed": true,
+    "prod_vs_naive": {
+      "checked": 12,
+      "mismatches": []
+    },
+    "future_rows_removed": [
+      {
+        "cut": "2012-12-31",
+        "checked": 336,
+        "mismatches": [],
+        "passed": true
+      },
+      {
+        "cut": "2017-12-31",
+        "checked": 593,
+        "mismatches": [],
+        "passed": true
+      }
+    ]
+  },
+  "T4": {
+    "name": "T4",
+    "passed": true,
+    "hits": [
+      {
+        "line": 600,
+        "call": "np.median",
+        "function": "metrics_weighted",
+        "allowed": true
+      },
+      {
+        "line": 602,
+        "call": "np.median",
+        "function": "metrics_weighted",
+        "allowed": true
+      },
+      {
+        "line": 700,
+        "call": "np.quantile",
+        "function": "ci95",
+        "allowed": true
+      },
+      {
+        "line": 700,
+        "call": "np.quantile",
+        "function": "ci95",
+        "allowed": true
+      },
+      {
+        "line": 649,
+        "call": "np.nanmedian",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 431,
+        "call": "np.quantile",
+        "function": "assign_c_thresholds",
+        "allowed": true
+      },
+      {
+        "line": 432,
+        "call": "np.quantile",
+        "function": "assign_c_thresholds",
+        "allowed": true
+      },
+      {
+        "line": 656,
+        "call": "np.median",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 659,
+        "call": "np.nanmedian",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 660,
+        "call": "np.nanmedian",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 661,
+        "call": "np.quantile",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 662,
+        "call": "np.quantile",
+        "function": "point_metrics",
+        "allowed": true
+      },
+      {
+        "line": 481,
+        "call": "np.quantile",
+        "function": "naive_threshold",
+        "allowed": true
+      },
+      {
+        "line": 482,
+        "call": "np.quantile",
+        "function": "naive_threshold",
+        "allowed": true
+      }
+    ],
+    "note": "分位/中位数只允许出现在 PIT 切片或事后统计函数中"
+  },
+  "T5": {
+    "name": "T5",
+    "passed": true,
+    "manual_rows": [
+      {
+        "code": "000029",
+        "j": 252,
+        "w": 253,
+        "date_w": "2007-02-09",
+        "entry_date": "2007-02-12",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 1,
+          "run_high": 5.8636407141968006,
+          "depth": 0.09554140127388555,
+          "vol_ratio": 1.1349376333326369,
+          "er26": 0.2941176470588235,
+          "n_pb": 0,
+          "run_high_w": 252,
+          "w_since_high": 1,
+          "mdd_since_high": 0.16082802547770714
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1187,
+          "open": 5.256735226262418
+        },
+        "outcomes": {
+          "r60": 0.760213143872114,
+          "mae60": -0.01243339253996445,
+          "mdd60": -0.12985685071574637,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 252,
+        "w": 271,
+        "date_w": "2007-06-22",
+        "entry_date": "2007-06-25",
+        "labels": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 19,
+          "run_high": 10.905624767805513,
+          "depth": 0.336472602739726,
+          "vol_ratio": 1.3682906953052805,
+          "er26": 0.21197007481296715,
+          "n_pb": 1,
+          "run_high_w": 268,
+          "w_since_high": 3,
+          "mdd_since_high": 0.41609589041095885
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1272,
+          "open": 7.189495780145759
+        },
+        "outcomes": {
+          "r60": 0.24805194805194808,
+          "mae60": -0.24675324675324684,
+          "mdd60": -0.28395061728395066,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 252,
+        "w": 275,
+        "date_w": "2007-07-20",
+        "entry_date": "2007-07-23",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 23,
+          "run_high": 10.905624767805513,
+          "depth": 0.3595890410958903,
+          "vol_ratio": 0.9058713175762629,
+          "er26": 0.16275764036958032,
+          "n_pb": 2,
+          "run_high_w": 268,
+          "w_since_high": 7,
+          "mdd_since_high": 0.5034246575342465
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1291,
+          "open": 7.1988327876524405
+        },
+        "outcomes": {
+          "r60": 0.07392996108949412,
+          "mae60": -0.012970168612191912,
+          "mdd60": -0.2509157509157509,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 252,
+        "w": 276,
+        "date_w": "2007-07-27",
+        "entry_date": "2007-07-30",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 24,
+          "run_high": 10.905624767805513,
+          "depth": 0.25599315068493156,
+          "vol_ratio": 0.944231772364125,
+          "er26": 0.18702553485162138,
+          "n_pb": 2,
+          "run_high_w": 268,
+          "w_since_high": 8,
+          "mdd_since_high": 0.5034246575342465
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1296,
+          "open": 7.983141418213797
+        },
+        "outcomes": {
+          "r60": -0.15438596491228063,
+          "mae60": -0.1929824561403508,
+          "mdd60": -0.36813186813186816,
+          "race10": 0,
+          "race20n10": 1,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 399,
+        "w": 406,
+        "date_w": "2010-02-12",
+        "entry_date": "2010-02-22",
+        "labels": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 7,
+          "run_high": 7.338887900252684,
+          "depth": 0.19465648854961837,
+          "vol_ratio": null,
+          "er26": null,
+          "n_pb": 1,
+          "run_high_w": 403,
+          "w_since_high": 3,
+          "mdd_since_high": 0.22519083969465659
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1906,
+          "open": 5.891651736716848
+        },
+        "outcomes": {
+          "r60": -0.23930269413629157,
+          "mae60": -0.28367670364500785,
+          "mdd60": -0.3891891891891892,
+          "race10": 0,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 399,
+        "w": 412,
+        "date_w": "2010-04-02",
+        "entry_date": "2010-04-06",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 13,
+          "run_high": 7.338887900252684,
+          "depth": 0.11959287531806617,
+          "vol_ratio": null,
+          "er26": null,
+          "n_pb": 3,
+          "run_high_w": 403,
+          "w_since_high": 9,
+          "mdd_since_high": 0.22519083969465659
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1936,
+          "open": 6.451872187117817
+        },
+        "outcomes": {
+          "r60": -0.3545586107091172,
+          "mae60": -0.402315484804631,
+          "mdd60": -0.44189189189189193,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 642,
+        "w": 702,
+        "date_w": "2015-11-20",
+        "entry_date": "2015-11-23",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 60,
+          "run_high": 17.833684337764154,
+          "depth": 0.27584595901097064,
+          "vol_ratio": 1.2306252819163799,
+          "er26": 0.10545350903069194,
+          "n_pb": 6,
+          "run_high_w": 678,
+          "w_since_high": 24,
+          "mdd_since_high": 0.66282722513089
+        },
+        "entry": {
+          "tradable": true,
+          "di": 3298,
+          "open": 13.046305881180956
+        },
+        "outcomes": {
+          "r60": -0.20375722543352603,
+          "mae60": -0.47326589595375723,
+          "mdd60": -0.5374365482233503,
+          "race10": 0,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000029",
+        "j": 1193,
+        "w": 1211,
+        "date_w": "2025-11-07",
+        "entry_date": "2025-11-10",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 18,
+          "run_high": 33.953038674031575,
+          "depth": 0.16764705882352937,
+          "vol_ratio": 0.7439482375607208,
+          "er26": 0.3900758097863547,
+          "n_pb": 2,
+          "run_high_w": 1206,
+          "w_since_high": 5,
+          "mdd_since_high": 0.2147058823529412
+        },
+        "entry": {
+          "tradable": true,
+          "di": 4713,
+          "open": 28.210980662982116
+        },
+        "outcomes": {
+          "r60": -0.19079646017699115,
+          "mae60": -0.30194690265486723,
+          "mdd60": -0.31646447140381295,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 205,
+        "date_w": "2006-02-24",
+        "entry_date": "2006-02-27",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 1,
+          "run_high": 1.4514047828579992,
+          "depth": 0.05778894472361806,
+          "vol_ratio": null,
+          "er26": null,
+          "n_pb": 0,
+          "run_high_w": 204,
+          "w_since_high": 1,
+          "mdd_since_high": 0.09547738693467334
+        },
+        "entry": {
+          "tradable": true,
+          "di": 969,
+          "open": 1.3602361407186776
+        },
+        "outcomes": {
+          "r60": 0.09383378016085797,
+          "mae60": -0.06702412868632701,
+          "mdd60": -0.1614457831325301,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 209,
+        "date_w": "2006-03-24",
+        "entry_date": "2006-03-27",
+        "labels": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 5,
+          "run_high": 1.4514047828579992,
+          "depth": 0.07035175879396982,
+          "vol_ratio": null,
+          "er26": null,
+          "n_pb": 1,
+          "run_high_w": 204,
+          "w_since_high": 5,
+          "mdd_since_high": 0.11055276381909551
+        },
+        "entry": {
+          "tradable": true,
+          "di": 989,
+          "open": 1.3492959036619592
+        },
+        "outcomes": {
+          "r60": 0.21351351351351355,
+          "mae60": -0.05945945945945952,
+          "mdd60": -0.18674698795180744,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 230,
+        "date_w": "2006-08-25",
+        "entry_date": "2006-08-28",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 26,
+          "run_high": 1.9524292532589538,
+          "depth": 0.1425818882466281,
+          "vol_ratio": 0.9463084238233842,
+          "er26": 0.2058042733059841,
+          "n_pb": 2,
+          "run_high_w": 227,
+          "w_since_high": 3,
+          "mdd_since_high": 0.1522157996146435
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1093,
+          "open": 1.6778101097369813
+        },
+        "outcomes": {
+          "r60": 0.31390134529148006,
+          "mae60": -0.013452914798206095,
+          "mdd60": -0.11481481481481481,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 231,
+        "date_w": "2006-09-01",
+        "entry_date": "2006-09-04",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 27,
+          "run_high": 1.9524292532589538,
+          "depth": 0.10597302504816963,
+          "vol_ratio": 0.8832252915487779,
+          "er26": 0.23139856825718658,
+          "n_pb": 2,
+          "run_high_w": 227,
+          "w_since_high": 4,
+          "mdd_since_high": 0.1522157996146435
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1098,
+          "open": 1.7380006069472766
+        },
+        "outcomes": {
+          "r60": 0.34199134199134207,
+          "mae60": -0.04761904761904756,
+          "mdd60": -0.12068965517241381,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 254,
+        "date_w": "2007-02-16",
+        "entry_date": "2007-02-26",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": true
+        },
+        "features": {
+          "age": 50,
+          "run_high": 2.9756677058339736,
+          "depth": 0.03539823008849552,
+          "vol_ratio": 0.8898167361642577,
+          "er26": 0.37468354430379774,
+          "n_pb": 5,
+          "run_high_w": 251,
+          "w_since_high": 3,
+          "mdd_since_high": 0.17446270543615672
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1209,
+          "open": 2.86281052356467
+        },
+        "outcomes": {
+          "r60": 0.8462549277266755,
+          "mae60": -0.11957950065703016,
+          "mdd60": -0.19673247106875424,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 204,
+        "w": 264,
+        "date_w": "2007-04-30",
+        "entry_date": "2007-05-08",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": true
+        },
+        "features": {
+          "age": 60,
+          "run_high": 4.751287373537685,
+          "depth": 0.006334125098970689,
+          "vol_ratio": 0.5252710253404744,
+          "er26": 0.5946791862284823,
+          "n_pb": 5,
+          "run_high_w": 264,
+          "w_since_high": 0,
+          "mdd_since_high": 0.07917656373713367
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1255,
+          "open": 4.958192207698075
+        },
+        "outcomes": {
+          "r60": -0.1622434310358598,
+          "mae60": -0.3171471927162367,
+          "mdd60": -0.38733832539142277,
+          "race10": 0,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 397,
+        "w": 401,
+        "date_w": "2010-01-08",
+        "entry_date": "2010-01-11",
+        "labels": {
+          "A": true,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 4,
+          "run_high": 4.159517322462225,
+          "depth": 0.10239234449760759,
+          "vol_ratio": 0.8059324052193241,
+          "er26": 0.029166666666666712,
+          "n_pb": 1,
+          "run_high_w": 398,
+          "w_since_high": 3,
+          "mdd_since_high": 0.1435406698564594
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1851,
+          "open": 3.8092421795180376
+        },
+        "outcomes": {
+          "r60": 0.32915360501567403,
+          "mae60": -0.09090909090909094,
+          "mdd60": -0.15451895043731778,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 397,
+        "w": 402,
+        "date_w": "2010-01-15",
+        "entry_date": "2010-01-18",
+        "labels": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "features": {
+          "age": 5,
+          "run_high": 4.159517322462225,
+          "depth": 0.036363636363636265,
+          "vol_ratio": 0.8380069687412303,
+          "er26": 0.11154985192497519,
+          "n_pb": 1,
+          "run_high_w": 398,
+          "w_since_high": 4,
+          "mdd_since_high": 0.1435406698564594
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1856,
+          "open": 3.980399351638493
+        },
+        "outcomes": {
+          "r60": 0.20900000000000007,
+          "mae60": -0.13000000000000012,
+          "mdd60": -0.15451895043731778,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 639,
+        "w": 662,
+        "date_w": "2015-02-13",
+        "entry_date": "2015-02-16",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 23,
+          "run_high": 5.824084958117104,
+          "depth": 0.028379387602688766,
+          "vol_ratio": null,
+          "er26": null,
+          "n_pb": 1,
+          "run_high_w": 662,
+          "w_since_high": 0,
+          "mdd_since_high": 0.07991038088125468
+        },
+        "entry": {
+          "tradable": true,
+          "di": 3078,
+          "open": 5.6588009936597095
+        },
+        "outcomes": {
+          "r60": 0.4066102997694083,
+          "mae60": -0.006917755572636408,
+          "mdd60": -0.11504424778761058,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000530",
+        "j": 1167,
+        "w": 1226,
+        "date_w": "2026-02-27",
+        "entry_date": "2026-03-02",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 59,
+          "run_high": 8.216666666666786,
+          "depth": 0.16024096385542186,
+          "vol_ratio": 1.1278989148928387,
+          "er26": 0.07563025210084018,
+          "n_pb": 10,
+          "run_high_w": 1216,
+          "w_since_high": 10,
+          "mdd_since_high": 0.19397590361445793
+        },
+        "entry": {
+          "tradable": true,
+          "di": 5745,
+          "open": 6.850522088353512
+        },
+        "outcomes": {
+          "r60": -0.11416184971098264,
+          "mae60": -0.2225433526011561,
+          "mdd60": -0.23032904148783984,
+          "race10": 1,
+          "race20n10": 1,
+          "race20": 1
+        },
+        "diffs": []
+      },
+      {
+        "code": "000593",
+        "j": 213,
+        "w": 214,
+        "date_w": "2006-04-28",
+        "entry_date": "2006-05-08",
+        "labels": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 1,
+          "run_high": 2.2708166828858096,
+          "depth": 0.12112676056338023,
+          "vol_ratio": 1.6863197137042947,
+          "er26": 0.0684931506849311,
+          "n_pb": 0,
+          "run_high_w": 213,
+          "w_since_high": 1,
+          "mdd_since_high": 0.18309859154929586
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1029,
+          "open": 1.9957600142545708
+        },
+        "outcomes": {
+          "r60": 0.6820192307693018,
+          "mae60": -0.0064102564102563875,
+          "mdd60": -0.2241715399610137,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      },
+      {
+        "code": "000593",
+        "j": 213,
+        "w": 216,
+        "date_w": "2006-05-19",
+        "entry_date": "2006-05-22",
+        "labels": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "features": {
+          "age": 3,
+          "run_high": 2.520286684667631,
+          "depth": 0.015228426395939132,
+          "vol_ratio": 3.7804792239769567,
+          "er26": 0.29328621908127206,
+          "n_pb": 1,
+          "run_high_w": 216,
+          "w_since_high": 0,
+          "mdd_since_high": 0.1142131979695431
+        },
+        "entry": {
+          "tradable": true,
+          "di": 1039,
+          "open": 2.488303351105859
+        },
+        "outcomes": {
+          "r60": 0.3530077120823194,
+          "mae60": -0.059125964010282805,
+          "mdd60": -0.2241715399610137,
+          "race10": 0,
+          "race20n10": 0,
+          "race20": 0
+        },
+        "diffs": []
+      }
+    ],
+    "episodes": [
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2007,
+        "n_b0": 50,
+        "diffs": [],
+        "cat_r60": 0.24805194805194808
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2010,
+        "n_b0": 12,
+        "diffs": [],
+        "cat_r60": -0.23930269413629157
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2014,
+        "n_b0": 65,
+        "diffs": [],
+        "cat_r60": 0.04658385093167694
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2022,
+        "n_b0": 12,
+        "diffs": [],
+        "cat_r60": 0.11827956989247301
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2023,
+        "n_b0": 13,
+        "diffs": [],
+        "cat_r60": -0.08152173913043492
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2024,
+        "n_b0": 10,
+        "diffs": [],
+        "cat_r60": -0.15626856803327382
+      },
+      {
+        "cat": "A",
+        "code": "000029",
+        "year": 2025,
+        "n_b0": 17,
+        "diffs": [],
+        "cat_r60": -0.1188226744186045
+      },
+      {
+        "cat": "A",
+        "code": "000530",
+        "year": 2006,
+        "n_b0": 90,
+        "diffs": [],
+        "cat_r60": 0.21351351351351355
+      },
+      {
+        "cat": "A",
+        "code": "000530",
+        "year": 2010,
+        "n_b0": 21,
+        "diffs": [],
+        "cat_r60": 0.32915360501567403
+      },
+      {
+        "cat": "A",
+        "code": "000530",
+        "year": 2013,
+        "n_b0": 56,
+        "diffs": [],
+        "cat_r60": -0.11215692504228614
+      }
+    ],
+    "race_ignores_entry": {
+      "checked": 20,
+      "passed": true
+    },
+    "episode_parity": {
+      "checked": 200,
+      "passed": true,
+      "mismatches": []
+    },
+    "n_manual": 20
+  },
+  "passed": true
+}

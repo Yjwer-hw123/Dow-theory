@@ -1,0 +1,22 @@
+{
+  "n_signals": 11419,
+  "n_usable": 11419,
+  "n_bad": 0,
+  "bad_reasons": {},
+  "win_rate_net": 0.5477712584289343,
+  "net_mean_pct": 8.209832778719775,
+  "net_med_pct": 2.301114947644,
+  "mfe_med_pct": 18.986301369863014,
+  "mfe_bar_med": 31.0,
+  "t80_med_win": 38.0,
+  "t50_med_win": 24.0,
+  "capture_med_win": 0.5884441725998711,
+  "mae_med_pct": -11.017306880540323,
+  "mae_p05_pct": -35.91785432754486,
+  "breach_c6_share": 0.619055959365969,
+  "breach_c6_net_win": 0.3253642665157731,
+  "breach_c8_share": 0.5394517908748577,
+  "breach_c8_net_win": 0.27694805194805194,
+  "breach_c6_by10_net_win": 0.3873338987842805,
+  "breach_c6_by20_net_win": 0.3688458434221146
+}

@@ -1,0 +1,28 @@
+{
+  "phase": "EP-02e",
+  "title": "B 类策略可投资性诊断协议",
+  "file": "out/entry_phase_02/EP02E_INVESTABILITY_PROTOCOL.md",
+  "sha256": "61A87D33AFF14CA93798996EECC9BE64E676A902971619C0C42F8A98A60BDC6B",
+  "frozen_at": "2026-11-08",
+  "status": "FROZEN_BEFORE_RUN",
+  "questions": ["Q1_drawdown_source", "Q2_return_capture", "Q3_portfolio_slack"],
+  "control": "B0 no-stop, 60-bar close exit, 3 positions, 1/3 NAV each, first-come-first-served",
+  "prohibitions": [
+    "不修改 B 类信号定义",
+    "不新增市场过滤器",
+    "不研究新的止损阈值",
+    "不研究止盈",
+    "不调整参数追求更漂亮的回测",
+    "不重复 EP-02c / EP-02d 已完成的审计"
+  ],
+  "reporting_rules": [
+    "风险数字必须同时列收益代价与机会成本",
+    "回撤下降本身不构成改善证据",
+    "不使用盘中触价口径",
+    "3 仓期末净值不得解释为策略优劣"
+  ],
+  "upstream_frozen": {
+    "stop_preregister_sha256": "0FF76B97E86AC8266208156C71B4B7D48389CA6F72CE73F3A8519ED7540D1993",
+    "ep02d_summary_sha256": "4E2BACCC6FD394D6517750467AEEA25E0F4D0DE0468476E7C5D2CD1DA21D8F29"
+  }
+}

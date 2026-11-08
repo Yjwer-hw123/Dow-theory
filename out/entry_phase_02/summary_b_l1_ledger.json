@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "generated_at": "2026-11-08 17:14:25",
+    "script": "scripts/entry_phase_02_l1_ledger.py",
+    "trades": 11419,
+    "notional": 50000.0,
+    "scenario": "base",
+    "nav_method": "NAV = C0 + 累计现金流 + 未平仓市值（逐日盯市）",
+    "position_value": "N × qfq_t / qfq_entry"
+  },
+  "cash": {
+    "min_initial_capital": 11951126.2079142,
+    "min_cash_balance": 0.0,
+    "max_position_value": 37079389.73877381,
+    "max_open_positions": 694,
+    "final_nav": 47756386.87586908,
+    "total_net_amount": 35805260.667954884
+  },
+  "nav": {
+    "max_drawdown": 0.17378551583698387,
+    "dd_peak_date": "2010-04-12",
+    "dd_trough_date": "2012-12-03",
+    "dd_peak_nav": 26534118.725870084,
+    "dd_trough_nav": 21922873.215814978,
+    "dd_loss_amount": 4611245.510055106
+  },
+  "crash_2015": {
+    "window": "2015-06-01~2015-10-31",
+    "nav_start": 39422079.99607083,
+    "nav_trough": 34764549.38218011,
+    "loss_amount": 4657530.613890722,
+    "loss_pct": -0.11814522760734425,
+    "peak_date": "2015-06-12",
+    "trough_date": "2015-09-15",
+    "entry_201506_n": 82,
+    "entry_201506_net_amount": -1499935.4717940378,
+    "entry_201506_win_rate": 0.036585365853658534,
+    "exit_window_n": 172,
+    "exit_window_net_amount": -40665.57373692631,
+    "exit_window_win_rate": 0.313953488372093
+  },
+  "streaks": {
+    "original_trades": 60,
+    "entry_batch": 11,
+    "entry_batch_seq": [
+      "2011-02",
+      "2011-03",
+      "2011-04",
+      "2011-05",
+      "2011-06",
+      "2011-07",
+      "2011-08",
+      "2011-09",
+      "2011-10",
+      "2011-11",
+      "2011-12"
+    ],
+    "losing_month": 12,
+    "losing_month_seq": [
+      "2011-05",
+      "2011-06",
+      "2011-07",
+      "2011-08",
+      "2011-09",
+      "2011-10",
+      "2011-11",
+      "2011-12",
+      "2012-01",
+      "2012-02",
+      "2012-03",
+      "2012-04"
+    ],
+    "worst_entry_batch": "2015-06",
+    "worst_entry_batch_loss": -1499935.4717940376
+  },
+  "l1_6": {
+    "mdd_portfolio": 0.17378551583698387,
+    "mdd_le_30pct": true,
+    "streak_original_trades": 60,
+    "streak_entry_batch": 11,
+    "streak_losing_month": 12,
+    "streak_le_12": true,
+    "pass_": true
+  },
+  "failed_codes": []
+}

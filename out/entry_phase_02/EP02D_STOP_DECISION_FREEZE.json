@@ -1,0 +1,72 @@
+{
+  "phase": "EP-02d",
+  "title": "B 类交易止损规则裁决冻结",
+  "frozen_at": "2026-11-08",
+  "status": "FROZEN_AFTER_RUN",
+  "prereg": {
+    "file": "out/entry_phase_02/EP02C_STOP_PREREGISTER.md",
+    "sha256": "0FF76B97E86AC8266208156C71B4B7D48389CA6F72CE73F3A8519ED7540D1993",
+    "sha256_verified_before_run": true,
+    "modified_after_freeze": false
+  },
+  "verdict": "REJECT_ALL",
+  "adopted": null,
+  "rules": [
+    {"id": "B0", "start_bar": null, "threshold_pct": null, "decision": "KEEP_AS_BASELINE"},
+    {"id": "S1", "start_bar": 10, "threshold_pct": -6, "decision": "REJECT"},
+    {"id": "S2", "start_bar": 10, "threshold_pct": -8, "role": "primary_hypothesis", "decision": "REJECT"},
+    {"id": "S3", "start_bar": 20, "threshold_pct": -6, "decision": "REJECT"},
+    {"id": "S4", "start_bar": 20, "threshold_pct": -8, "decision": "REJECT"},
+    {"id": "S5", "start_bar": 20, "threshold_pct": -10, "decision": "REJECT"}
+  ],
+  "gates": {
+    "G1_no_profit_cut": {"passed_rules": 0, "total_rules": 5, "pass_all": false},
+    "G2_mdd_drop_ge_5pp_and_15pct": {"passed_rules": 3, "total_rules": 5, "pass_all": true, "passed": ["S2", "S3", "S5"]},
+    "G3_validate_test_expectation_ge_base": {"passed_rules": 0, "total_rules": 5, "pass_all": false},
+    "G4_bad_years_le_9_of_20": {"passed_rules": 0, "total_rules": 5, "pass_all": false, "bad_years_each": "15/20"},
+    "G5_net_of_whipsaw_positive": {"passed_rules": 0, "total_rules": 5, "pass_all": false}
+  },
+  "headline_metrics_base": {
+    "n_trades": 11419,
+    "B0": {"expectancy": 0.08209832778719771, "total_net": 46874040.25, "win_rate": 0.5477712584289343, "profit_factor": 2.3854035875945994},
+    "S1": {"expectancy": 0.055333429286376204, "total_net": 31592621.45, "win_rate": 0.3781416936684473, "profit_factor": 1.959203743813446},
+    "S2": {"expectancy": 0.05872026760544165, "total_net": 33526336.79, "win_rate": 0.4188632980120851, "profit_factor": 1.9609905686045734},
+    "S3": {"expectancy": 0.061198008152664456, "total_net": 34941002.75, "win_rate": 0.4163236710745249, "profit_factor": 2.011806241689693},
+    "S4": {"expectancy": 0.0640705488531023, "total_net": 36581079.87, "win_rate": 0.4483755144933882, "profit_factor": 2.02485279169488},
+    "S5": {"expectancy": 0.06620290275110134, "total_net": 37798547.33, "win_rate": 0.4746475172957352, "profit_factor": 2.036236386566258}
+  },
+  "portfolio": {
+    "main_3pos": {"B0_mdd": 0.753497937923756, "best_stop_mdd": 0.6120474061765173, "best_stop_rule": "S2", "B0_final_nav": 5719552.238656651},
+    "control_20pos": {"B0_mdd": 0.5560438104887239, "B0_final_nav": 11848459.544547776, "B0_n_filled": 1480,
+      "stop_final_nav_range": [5058247.350423094, 7134849.768601953],
+      "stop_mdd_range": [0.5133483880290366, 0.6273191544246294],
+      "S2_mdd": 0.6097009115417832}
+  },
+  "scope_statement": {
+    "proved": "预注册的五条固定百分比收盘止损，在 B 类信号、60 bar 固定持有期、收盘确认次日开盘成交口径下，没有一条能在保留原策略盈利能力的同时实质性改善风险。",
+    "not_proved": [
+      "所有止损方式无效",
+      "结构性或条件式止损必然无效",
+      "未来任何止损都不可能改善该策略"
+    ]
+  },
+  "prohibitions": [
+    "禁止重试或新增固定百分比止损阈值",
+    "禁止更换观察起点或放宽预注册口径",
+    "禁止以盘中触价口径作为结论依据",
+    "止盈研究（第三阶段）继续冻结",
+    "不以补一条止损线作为实盘上线前置条件"
+  ],
+  "unresolved": [
+    "3 仓组合 MDD 75.35%，最好止损方案仍 61.20%，不可作为个人实盘风险水平",
+    "止损规则改变资金释放时点导致后续买入标的变化，组合结果存在路径依赖，不可归因为止损改善",
+    "原始 B 类策略有历史盈利证据，但缺少可接受的风险架构"
+  ],
+  "artifacts": {
+    "report": {"file": "out/entry_phase_02/P2C_STOP_BACKTEST_REPORT.md", "sha256": "280E4C18BADFBD97FF8F7977781127F1E44818129075443C8652D5178DFD3364"},
+    "summary": {"file": "out/entry_phase_02/p2d_summary.json", "sha256": "4E2BACCC6FD394D6517750467AEEA25E0F4D0DE0468476E7C5D2CD1DA21D8F29"},
+    "trades": {"file": "out/entry_phase_02/p2d_trades.csv", "sha256": "F4DD449001119D9666D623E406E33840BDE00BF739DE97B9EBCBF899942EAD3F"},
+    "script": "scripts/entry_phase_02d_stoploss.py"
+  },
+  "next_decision": "这套 B 类策略是否值得作为交易系统继续开发（须另立决策，不在本次冻结范围）"
+}

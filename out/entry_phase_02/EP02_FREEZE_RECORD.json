@@ -1,0 +1,8 @@
+﻿{
+    "file":  "out/entry_phase_02/ENTRY_PHASE_02_PROTOCOL_v0.3_FROZEN.md",
+    "sha256":  "439DEFA40F92DB2DA3EF09C7F10B1B31EA558659634137F3DB044042FC8D4FF3",
+    "frozen_at":  "2026-11-08 01:33:18",
+    "protocol":  "ENTRY-PHASE-02 v0.3 FROZEN",
+    "upstream":  "ENTRY-PHASE-01 v1.2 FROZEN (unchanged)",
+    "note":  "冻结后仅允许 STEP1-STEP5 执行，不得运行后修改门槛"
+}

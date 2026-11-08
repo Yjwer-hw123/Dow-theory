@@ -1,0 +1,116 @@
+{
+  "phase": "EP-02e",
+  "title": "B 类策略可投资性诊断",
+  "status": "DIAGNOSIS_COMPLETE_NO_DECISION",
+  "completed_at": "2026-11-08",
+  "protocol": {
+    "file": "out/entry_phase_02/EP02E_INVESTABILITY_PROTOCOL.md",
+    "sha256": "61A87D33AFF14CA93798996EECC9BE64E676A902971619C0C42F8A98A60BDC6B",
+    "verified_before_run": true
+  },
+  "control_reproduction": {
+    "rule": "B0",
+    "final_nav": 5719552.238656651,
+    "mdd": 0.753497937923756,
+    "n_filled": 201,
+    "nav_rel_diff": 0.0,
+    "matches_frozen_ep02d": true
+  },
+  "Q1_drawdown": {
+    "n_episodes_ge_10pct": 8,
+    "worst": {
+      "peak": "2007-09-17",
+      "trough": "2012-12-03",
+      "recovery": "2021-02-19",
+      "depth": 0.753497937923756,
+      "trough_trading_days": 1268,
+      "underwater_trading_days": 3263,
+      "underwater_years_approx": 13.4,
+      "nav_change": -5550505.953834721,
+      "realized_pnl": -3777691.3185278694,
+      "realized_share_of_drop": 0.6805674884545317,
+      "unrealized_change": -1772814.6353068515,
+      "n_exits": 44,
+      "n_entries": 46,
+      "avg_npos": 2.1221434200157603,
+      "share_days_full": 0.4373522458628842,
+      "market_proxy_return": -0.22178080200073547,
+      "portfolio_to_market_ratio": 3.3975
+    }
+  },
+  "Q2_capture": {
+    "n_signals": 11419,
+    "n_filled": 201,
+    "fill_rate": 0.017602241877572467,
+    "skipped_max_positions": 6085,
+    "skipped_cash_insufficient": 5132,
+    "skipped_duplicate": 1,
+    "capacity_ceiling_fills": 262.8,
+    "capacity_utilization": 0.7648401826484018,
+    "filled_expectancy": 0.04693947007469546,
+    "skipped_expectancy": 0.08272829127446932,
+    "filled_minus_skipped_pp": -3.5789,
+    "filled_win_rate": 0.4427860696517413,
+    "skipped_win_rate": 0.5496523444464254,
+    "same_day_matched_days": 120,
+    "same_day_matched_mean_diff": 0.01555173925848259,
+    "same_day_filled_better_share": 0.44166666666666665,
+    "entry_lag_mean_trading_days": 1.0068307207286102,
+    "entry_lag_1day_share": 0.9966722129783694,
+    "signals_2025": 2014,
+    "fills_2025": 10
+  },
+  "Q3_concentration_and_occupancy": {
+    "total_realized_pnl": 4719552.238656651,
+    "hhi_abs_share": 0.011537367123962881,
+    "top1_trade_share_of_net": 0.4825714098947581,
+    "top2_trade_share_of_net": 0.9396,
+    "top5_trades_share_of_net": 1.7371858214782343,
+    "top5_stocks_share_of_net": 1.7371858214782343,
+    "max_exit_year": 2021,
+    "max_exit_year_share": 0.9196251495649939,
+    "cohort_2006_fills": 9,
+    "cohort_2006_pnl": 4556474.884654898,
+    "cohort_2006_share": 0.9654464352219628,
+    "pnl_excluding_2006": 163077.353,
+    "position_days": 12380,
+    "loss_trade_position_days": 6846,
+    "loss_share": 0.5529886914378029,
+    "days_full_share": 0.4373522458628842,
+    "idle_days": 136,
+    "cagr": 0.08404672935705793,
+    "mdd": 0.753497937923756,
+    "cagr_over_mdd": 0.11154208276753419,
+    "reference_20pos": {
+      "cagr": 0.12091189006109015,
+      "mdd": 0.5560438104887239,
+      "cagr_over_mdd": 0.21745029398819674,
+      "n_filled": 1480
+    }
+  },
+  "interpretation_limits": [
+    "3 仓组合存在路径依赖，期末净值不代表策略优劣",
+    "占用质量按最终收益正负事后归类，不能反推入场时可判",
+    "跳过信号机会成本按 50,000 元名义计算，受容量约束不可直接实现",
+    "20 仓结果来自 EP-02d 已冻结对照，仅作容量参照，不能直接外推"
+  ],
+  "prohibitions_observed": [
+    "未修改 B 类信号定义",
+    "未新增市场过滤器",
+    "未研究新止损阈值",
+    "未研究止盈",
+    "未调整参数",
+    "未重复 EP-02c / EP-02d 审计"
+  ],
+  "artifacts": {
+    "report": {"file": "out/entry_phase_02/P2E_INVESTABILITY_REPORT.md", "sha256": "7A37E67615014BC3F202FD4D40BDC1F633D932A6152DC697ED452E791DD13651"},
+    "summary": {"file": "out/entry_phase_02/p2e_summary.json", "sha256": "163D8F5EDA403DF48D05714D865D1B54F27E899C94C10B16AB5AA3BA318B9E3D"},
+    "funnel": {"file": "out/entry_phase_02/p2e_funnel.csv", "sha256": "6AD89C3B3FA34D2538D75C6DE4DFC7C595B8332CB69CD140581939C468267197"},
+    "capture": {"file": "out/entry_phase_02/p2e_capture.csv", "sha256": "F941B3652963BD8ADCD5A6518C8E4A5C1D2FE83AC8DF111FA654F70E44E56076"},
+    "occupancy": {"file": "out/entry_phase_02/p2e_occupancy.csv", "sha256": "41A92D7DFDD2765A01F37D363CF216E19939830EF08938F0D87E8A4CE4032A7B"},
+    "concentration": {"file": "out/entry_phase_02/p2e_concentration.csv", "sha256": "C619EF88E1917BFDC23D8CB4708B924DA08B01CFD764C376B6A0749965F238C9"},
+    "dd_episodes": {"file": "out/entry_phase_02/p2e_dd_episodes.csv", "sha256": "743B09DD35C26A5DEB25ECDDA28376E704CD59D83FC84DEB56AB5DE55E6F5D37"},
+    "script": "scripts/entry_phase_02e_investability.py"
+  },
+  "next_decision": "基于三问证据，决定是否进入风险架构开发，以及采用何种容量/规模假设"
+}

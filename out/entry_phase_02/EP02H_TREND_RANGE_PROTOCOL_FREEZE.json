@@ -1,0 +1,67 @@
+{
+  "phase": "EP-02h",
+  "title": "趋势结构与震荡环境下的 B 类信号表现差异",
+  "frozen_at": "2026-11-09",
+  "status": "FROZEN_PREREGISTERED",
+  "protocol_md": "out/entry_phase_02/EP02H_TREND_RANGE_PROTOCOL.md",
+  "protocol_version": "1.4",
+  "protocol_sha256": "B79DE0B84D9F777CBAF173B23C505ABD8283290F670C22A78DD2017EEFBD1CBD",
+  "upstream": {
+    "ep02g_protocol_sha256": "FA8C04BB813998D89321ECCFB27554F86B6899E0964EE949A3561A654E933029",
+    "ep02f_protocol_sha256": "7F2BC93357A933B82FF9A74F6C748058555121473091B7F758D19F37EBD6C3F8",
+    "ep02e_protocol_sha256": "61A87D33AFF14CA93798996EECC9BE64E676A902971619C0C42F8A98A60BDC6B"
+  },
+  "nature": "诊断实验；冻结范围仅限本次问题、口径与闸门，不构成对 EP-02 策略线的存续裁决",
+  "objects": {
+    "signal_pool": "冻结 11,419 个 B 类信号；要求入场后至少 60 根 bar 可用",
+    "holding": 15,
+    "exit_rule": "入场日起第 15 根日线收盘卖出，无止损无止盈",
+    "portfolio": "100万/3仓/每笔1/3 NAV/同日先到先得/回款次日可用/base 成本（仅一致性核对）",
+    "net_definition": "net15 = qfq 空间收益 − raw 空间成本；成本复用 entry_phase_02_l1.eval_trade(..., 'base')"
+  },
+  "environment": {
+    "primary": "ER60 >= 0.30 为趋势，方向由 d60 符号；ER60 < 0.30 为震荡",
+    "neutral": "ER60 >= 0.30 且 |d60| <= 1e-12，单独统计",
+    "unknown": "signal_date 之前不足 60 根 bar",
+    "zero_denominator": "Σ|Δclose| == 0 时 ER = 0，归入 range 并计数",
+    "sensitivity": {
+      "S-a": "ER20 >= 0.35，方向由 d20",
+      "S-b": "ER120 >= 0.25，方向由 d120",
+      "S-c": "r120 = close[t]/close[t-120]-1，>= +10% 牛，<= -10% 熊，其余震荡"
+    },
+    "causality": "全部标签使用 signal_date 收盘及之前数据；禁止使用 entry_date 收盘价"
+  },
+  "statistics": {
+    "difference": "Δ = mean(net15 | range) − mean(net15 | trend)，trend = up ∪ down",
+    "cluster_bootstrap": "月度聚类 Bootstrap，10,000 次，seed 20261108，90% CI (5%–95%)",
+    "common_uniform": "U ∈ [0,1)^{10000 × m0} 一次生成，各定义取每行前 m_d 个元素",
+    "min_valid_iterations": 9500,
+    "t6_seed": 20261109
+  },
+  "gates": {
+    "T0": "range 与 trend 各 >= 1,000 笔且各覆盖 >= 40 个月",
+    "T1": "主定义 Δ 非零（|Δ|<=1e-6 视为零），且 S-a/S-b/S-c 中至少两个同号",
+    "T2": "Δ > 0 且 90% CI 下界 > 0 且 range 胜率 > trend 胜率",
+    "T3": "range 的 |MAE15| 均值 <= trend，且盈亏比 >= trend",
+    "T4": "PASS / FAIL / NOT_APPLICABLE 三态；剔除最大净利年份全部信号后 Δ 仍 > 0 且 CI 下界 > 0",
+    "T5": "range 入场覆盖 >= 6 个不同自然年度",
+    "T6": "range 内 stock_ER20 高组 − 低组 > 0 且 CI 下界 > 0（机制证据）"
+  },
+  "reproduction_gates": {
+    "h15_final_nav": 22335139.61910044,
+    "h15_fills": 672,
+    "relative_tolerance": 0.000000001,
+    "signal_count": 11419
+  },
+  "forbidden": [
+    "修改任何交易规则或增加止损、止盈、移动止损",
+    "建立环境开关或只在某环境交易的回测",
+    "搜索环境阈值 0.30/0.35/0.25、窗口 20/60/120 或分位数",
+    "增加板块强度、相对强度、均线过滤、财务或情绪条件",
+    "比较其他持有期限或做期限优化",
+    "使用未来数据或入场日收盘价分类",
+    "把本阶段结论并入 EP-02d/02e/02f/02g 冻结结论",
+    "输出采用、上线或最优建议",
+    "把本协议冻结或任何结论标签解释为 EP-02 被终止或放弃"
+  ]
+}

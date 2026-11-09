@@ -39,9 +39,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pandas as pd  # noqa: E402
 
+from data.pit_universe import load_stock_codes  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QFQ_DIR = os.path.join(ROOT, "cache", "qfq")
-STOCK_CACHE = os.path.join(ROOT, "cache", "stocks")
 REPORT = os.path.join(ROOT, "cache", "qfq_report.json")
 
 
@@ -76,8 +77,7 @@ def main() -> None:
     args = ap.parse_args()
 
     os.makedirs(QFQ_DIR, exist_ok=True)
-    codes = sorted(os.path.basename(f)[:6]
-                   for f in glob.glob(os.path.join(STOCK_CACHE, "*.parquet")))
+    codes = load_stock_codes()
     if args.limit:
         codes = codes[:args.limit]
     todo = [c for c in codes if not os.path.exists(os.path.join(QFQ_DIR, f"{c}.parquet"))]

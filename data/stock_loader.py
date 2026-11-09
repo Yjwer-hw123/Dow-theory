@@ -39,7 +39,6 @@ import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE_DIR = os.path.join(ROOT, "cache", "stocks")
-os.makedirs(CACHE_DIR, exist_ok=True)
 
 # 股票池已在项目内自包含（2026-09-25 从 stock-analysis-skill 复制进来），
 # 不再跨工作空间引用 —— 换机器/迁移目录时不会断。
@@ -78,6 +77,7 @@ def sina_symbol(code: str) -> str:
 
 
 def cache_path(code: str) -> str:
+    os.makedirs(CACHE_DIR, exist_ok=True)  # 目录已于 2026-11-09 清空释放，按需重建
     return os.path.join(CACHE_DIR, f"{code}.parquet")
 
 

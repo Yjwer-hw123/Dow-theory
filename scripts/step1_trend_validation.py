@@ -10,7 +10,7 @@
 
 数据口径
 --------
-- 股票池：cache/stocks 的 5,555 只沪深 A（5,222 存活 + 333 退市）。
+- 股票池：data/universe/stock_codes.json 的 5,555 只沪深 A（5,222 存活 + 333 退市）。
 - 本地 raw 为不复权；用新浪 qfq 累计因子在内存中算 qfq = raw / f。
 - 基准：399317 国证A指（宽基全 A，2005-02-03 起）。
 - 不做历史 ST 排除，不建行业映射。
@@ -18,7 +18,6 @@
 from __future__ import annotations
 
 import argparse
-import glob
 import json
 import math
 import os
@@ -33,10 +32,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from data.stock_loader import fetch_sina  # noqa: E402
+from data.pit_universe import load_stock_codes  # noqa: E402
 from scripts.build_qfq import fetch_factors  # noqa: E402
 
 OUT_DIR = os.path.join(ROOT, "out", "step1")
-STOCK_DIR = os.path.join(ROOT, "cache", "stocks")
 RAW_DIR = os.path.join(ROOT, "cache", "raw")
 FAC_DIR = os.path.join(ROOT, "cache", "factors")
 UNIVERSE_DIR = os.path.join(ROOT, "data", "universe")
@@ -95,13 +94,12 @@ def clean_raw(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def read_local_raw(code: str) -> pd.DataFrame:
-    for d in (RAW_DIR, STOCK_DIR):
-        p = os.path.join(d, f"{code}.parquet")
-        if os.path.exists(p):
-            try:
-                return pd.read_parquet(p)
-            except Exception:  # noqa: BLE001
-                continue
+    p = os.path.join(RAW_DIR, f"{code}.parquet")
+    if os.path.exists(p):
+        try:
+            return pd.read_parquet(p)
+        except Exception:  # noqa: BLE001
+            pass
     return pd.DataFrame()
 
 
@@ -370,7 +368,7 @@ def main() -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
     t_all = time.time()
 
-    codes = sorted(os.path.basename(f)[:6] for f in glob.glob(os.path.join(STOCK_DIR, "*.parquet")))
+    codes = load_stock_codes()
     if args.limit:
         codes = codes[: args.limit]
     log(f"股票池 {len(codes)} 只")
@@ -527,7 +525,7 @@ def main() -> None:
                 "c": "B 且周收盘 > 周 MA60，且周 MA60 > 4 周前 MA60",
             },
             "benchmark": {"code": "399317", "name": "国证A指", "source": "新浪财经日线"},
-            "stock_source": "本地 cache/stocks 不复权 raw + 新浪 qfq 累计因子（内存计算，不落盘）",
+            "stock_source": "本地 cache/raw 不复权 raw + 新浪 qfq 累计因子（内存计算，不落盘）",
             "st_filter": "未做历史 ST 排除；STEP 1 包含 ST 股票，结果不是最终可交易股票池",
         },
         "coverage": {

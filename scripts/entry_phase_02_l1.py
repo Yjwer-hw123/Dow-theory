@@ -16,7 +16,6 @@
 from __future__ import annotations
 
 import argparse
-import glob
 import json
 import math
 import os
@@ -32,7 +31,8 @@ sys.path.insert(0, ROOT)
 
 import scripts.entry_phase as ep  # noqa: E402
 import scripts.uptrend_detector as ud  # noqa: E402
-from scripts.step1_trend_validation import FAC_DIR, RAW_DIR, STOCK_DIR  # noqa: E402
+from scripts.step1_trend_validation import FAC_DIR, RAW_DIR  # noqa: E402
+from data.pit_universe import load_stock_codes  # noqa: E402
 
 OUT_DIR = os.path.join(ROOT, "out", "entry_phase_02")
 PROTOCOL = os.path.join(OUT_DIR, "ENTRY_PHASE_02_PROTOCOL_v0.3_FROZEN.md")
@@ -370,11 +370,10 @@ def main() -> None:
 
     os.makedirs(OUT_DIR, exist_ok=True)
     ep.init_ctx()
-    codes = sorted(os.path.basename(p)[:6]
-                   for p in glob.glob(os.path.join(STOCK_DIR, "*.parquet")))
+    codes = load_stock_codes()
     if args.limit:
         codes = codes[:args.limit]
-    log(f"[L1] 股票池 {len(codes)} 只（cache/stocks 为历史股票池名单）")
+    log(f"[L1] 股票池 {len(codes)} 只（data/universe/stock_codes.json）")
 
     t0 = time.time()
     results = []

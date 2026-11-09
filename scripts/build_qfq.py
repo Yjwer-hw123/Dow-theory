@@ -48,12 +48,12 @@ import pandas as pd  # noqa: E402
 import requests  # noqa: E402
 
 from data.stock_loader import fetch_sina  # noqa: E402
+from data.pit_universe import load_stock_codes  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DIR = os.path.join(ROOT, "cache", "raw")
 FAC_DIR = os.path.join(ROOT, "cache", "factors")
 QFQ_DIR = os.path.join(ROOT, "cache", "qfq")
-STOCK_CACHE = os.path.join(ROOT, "cache", "stocks")
 REPORT_JSON = os.path.join(ROOT, "cache", "qfq_build_report.json")
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -112,8 +112,7 @@ def main() -> None:
     for d in (RAW_DIR, FAC_DIR, QFQ_DIR):
         os.makedirs(d, exist_ok=True)
 
-    codes = sorted(os.path.basename(p)[:6]
-                   for p in glob.glob(os.path.join(STOCK_CACHE, "*.parquet")))
+    codes = load_stock_codes()
     if args.limit:
         codes = codes[:args.limit]
     print(f"[build_qfq] codes={len(codes)}", flush=True)

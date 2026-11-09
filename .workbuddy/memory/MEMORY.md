@@ -45,10 +45,10 @@
 ## 4. 数据与缓存
 
 - `cache/qfq`（938 MB）前复权价：p2c/p2d/p2e/p2f/p2g/p3 直接读。
-- `cache/raw`（658 MB）raw 价：成本计算、`qfq = raw/f` 合成、l1/l2/l1_ledger/step1。
-- `cache/stocks`（655 MB）：股票池名单、PIT universe、`stock_loader`。
+- `cache/raw`（658 MB）raw 价：成本计算、`qfq = raw/f` 合成、l1/l2/l1_ledger/step1；也是价格覆盖审计的数据源。
 - `cache/factors`（3 MB）：复权因子。
-- 根目录 6 个指数 parquet + `qfq_build_report.json`。**四类缓存全部仍被脚本引用，不可随手删除**；删后须重抓才能复现冻结基准。
+- **股票池名单**：5,555 只沪深 A 固化在 `data/universe/stock_codes.json`，统一由 `data.pit_universe.load_stock_codes()` 读取。原 `cache/stocks`（655 MB）已于 2026-11-09 清空释放——它与 `cache/raw` 的代码集合完全相同，只是被当名单用；`data/stock_loader.py` 只在真正重新下载个股时按需重建该目录。
+- 根目录 6 个指数 parquet + `qfq_build_report.json`。**剩余三类缓存全部仍被脚本引用，不可随手删除**；删后须重抓才能复现冻结基准。
 
 ## 5. 数据源教训（踩过的坑）
 

@@ -21,7 +21,6 @@ from __future__ import annotations
 import argparse
 import ast
 import copy
-import glob
 import json
 import math
 import os
@@ -37,7 +36,7 @@ sys.path.insert(0, ROOT)
 
 import scripts.uptrend_detector as ud  # noqa: E402
 from scripts.step1_trend_validation import (  # noqa: E402
-    END, FAC_DIR, STOCK_DIR, load_factor, log, read_local_raw,
+    END, FAC_DIR, load_factor, log, read_local_raw,
 )
 
 OUT_DIR = os.path.join(ROOT, "out", "entry_phase")
@@ -142,8 +141,9 @@ def get_factor(code: str) -> list[dict] | None:
 
 
 def all_codes() -> list[str]:
-    return sorted(os.path.basename(f)[:6]
-                  for f in glob.glob(os.path.join(STOCK_DIR, "*.parquet")))
+    from data.pit_universe import load_stock_codes
+
+    return load_stock_codes()
 
 
 def weekly_low(A: dict) -> np.ndarray:

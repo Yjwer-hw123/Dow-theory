@@ -69,14 +69,15 @@ python scripts/entry_phase_02f_attribution.py
 
 其它：`build_qfq.py`（合成 qfq）、`fetch_*.py`（抓取）、`audit_lineage.py`（数据血缘）、`step1_trend_validation.py`、`uptrend_detector.py`。
 
-## 5. 数据与缓存（约 2.25 GB，均被脚本引用）
+## 5. 数据与缓存（约 1.6 GB，均被脚本引用）
 
 | 目录 | 大小 | 用途 |
 |---|---|---|
 | `cache/qfq` | 938 MB | 前复权价，p2c/p2d/p2e/p2f/p2g/p3 直接读 |
-| `cache/raw` | 658 MB | raw 价，成本计算与 `qfq = raw/f` 合成 |
-| `cache/stocks` | 655 MB | 股票池名单、PIT universe、`stock_loader` |
+| `cache/raw` | 658 MB | raw 价，成本计算与 `qfq = raw/f` 合成；同时是价格覆盖审计的数据源 |
 | `cache/factors` | 3 MB | 复权因子 |
+
+**股票池名单已与缓存解耦**：5,555 只沪深 A 的代码固化在 `data/universe/stock_codes.json`，所有脚本通过 `data.pit_universe.load_stock_codes()` 读取。原 `cache/stocks`（655 MB，与 `cache/raw` 代码集合完全相同、仅用于提供名单）已于 2026-11-09 清空释放；`data/stock_loader.py` 只在真正重新下载个股时按需重建该目录。
 
 另有根目录 6 个指数 parquet（`000001_daily.parquet` 等）。**不要随手删**，删除后需重新抓取才能复现冻结基准。
 

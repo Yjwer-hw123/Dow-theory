@@ -29,10 +29,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from scripts.step1_trend_validation import (  # noqa: E402
-    BAD_RAW, END, FAC_DIR, HORIZONS, OUT_DIR, STOCK_DIR,
+    BAD_RAW, END, FAC_DIR, HORIZONS, OUT_DIR,
     apply_qfq, build_market, clean_raw, is_finite, load_factor,
     log, merge_fresh, read_local_raw,
 )
+from data.pit_universe import load_stock_codes  # noqa: E402
 from data.stock_loader import fetch_sina  # noqa: E402
 
 OUT = os.path.join(ROOT, "out", "postmortem")
@@ -322,7 +323,7 @@ def main() -> None:
     args = ap.parse_args()
     t_all = time.time()
 
-    codes = sorted(os.path.basename(f)[:6] for f in glob.glob(os.path.join(STOCK_DIR, "*.parquet")))
+    codes = load_stock_codes()
     if args.limit:
         codes = codes[: args.limit]
     log(f"股票池 {len(codes)} 只")

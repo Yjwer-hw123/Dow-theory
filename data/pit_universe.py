@@ -53,10 +53,21 @@ import os
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STOCK_CACHE = os.path.join(ROOT, "cache", "stocks")
+RAW_CACHE = os.path.join(ROOT, "cache", "raw")
 UNIVERSE_DIR = os.path.join(ROOT, "data", "universe")
 DELIST_JSON = os.path.join(UNIVERSE_DIR, "delisted.json")
 ALL_A_JSON = os.path.join(UNIVERSE_DIR, "all_a.json")
+STOCK_CODES_JSON = os.path.join(UNIVERSE_DIR, "stock_codes.json")
+
+
+def load_stock_codes() -> list[str]:
+    """历史股票池代码名单（5,555 只沪深 A）。
+
+    名单固化在 data/universe/stock_codes.json，不再依赖任何行情缓存目录，
+    因此删除缓存不会改变研究样本。名单与 cache/raw、原 cache/stocks 的代码集合完全一致。
+    """
+    with open(STOCK_CODES_JSON, encoding="utf-8") as f:
+        return sorted(json.load(f)["codes"])
 
 
 # ---------------------------------------------------------------------------
@@ -154,9 +165,9 @@ def build_candidate_lists(force: bool = False) -> dict:
 # 2. 从已缓存 parquet 读价格覆盖区间（用于审计 + PIT 池）
 # ---------------------------------------------------------------------------
 def price_coverage() -> pd.DataFrame:
-    """每只已缓存个股的首末交易日与 bar 数。"""
+    """每只已缓存个股的首末交易日与 bar 数（读 cache/raw）。"""
     rows = []
-    for f in sorted(glob.glob(os.path.join(STOCK_CACHE, "*.parquet"))):
+    for f in sorted(glob.glob(os.path.join(RAW_CACHE, "*.parquet"))):
         code = os.path.basename(f)[:6]
         try:
             df = pd.read_parquet(f)

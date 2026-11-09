@@ -5,7 +5,8 @@
 
 - 环境标签一律取 signal_date 收盘及之前的数据。
 - 固定 H=15，无止损/止盈/移动止损；不比较其他期限。
-- 判定门槛见 out/entry_phase_02/EP02H_TREND_RANGE_PROTOCOL.md（v1.4，已冻结）。
+- 判定门槛见 out/entry_phase_02/EP02H_TREND_RANGE_PROTOCOL.md（v1.5，已冻结）。
+  v1.5 仅把 T4 对称化到 Δ 的年度贡献 π_y，并显式定义 T2′/T3′/T5′。
 """
 from __future__ import annotations
 
@@ -30,7 +31,7 @@ import scripts.entry_phase_02d_stoploss as d  # noqa: E402
 
 OUT = os.path.join(ROOT, "out", "entry_phase_02")
 PROTO = os.path.join(OUT, "EP02H_TREND_RANGE_PROTOCOL.md")
-PROTO_SHA = "B79DE0B84D9F777CBAF173B23C505ABD8283290F670C22A78DD2017EEFBD1CBD"
+PROTO_SHA = "556BD8036EDA0866D2387252C21A44BA55795ECF51B06921906BB8A7F82D0437"
 
 H = 15
 N_ITER = 10_000
@@ -425,33 +426,54 @@ def main() -> None:
     pd.DataFrame(sens_rows).to_csv(os.path.join(OUT, "p2h_sensitivity_samples.csv"),
                                    index=False, encoding="utf-8")
 
-    # ---- T4：年份集中 ----
+    # ---- T4：年份集中（v1.5 对称化：检验 Δ 的年度贡献 π_y）----
     yr = sl[sl["env_main"] == "range"].groupby("year")["net15"].sum().sort_values(ascending=False)
     p_range = float(yr.sum())
-    if p_range <= 0:
-        t4, t4_reason = "NOT_APPLICABLE", "P_NEG"
-        t4_detail = dict(top3=np.nan, share=np.nan)
-    elif int((yr > 0).sum()) < 3:
-        t4, t4_reason = "NOT_APPLICABLE", "FEW_POS_YEARS"
-        t4_detail = dict(top3=np.nan, share=np.nan)
+    dm0 = boot["main"]
+    t4_dir = int(np.sign(dm0["delta"])) if abs(dm0["delta"]) > TOL_ZERO else 0
+    n_r = int((sl["env_main"] == "range").sum())
+    n_t = int(sl["env_main"].isin(["up", "down"]).sum())
+    ysum = sl.groupby(["year", "env_main"])["net15"].sum().unstack(fill_value=0.0)
+    for c in ("range", "up", "down"):
+        if c not in ysum.columns:
+            ysum[c] = 0.0
+    pi = ysum["range"] / n_r - (ysum["up"] + ysum["down"]) / n_t        # Σ π_y = Δ
+    t4_detail = dict(direction=t4_dir, top3=np.nan, share=np.nan)
+    if t4_dir == 0 or n_r == 0 or n_t == 0:
+        t4, t4_reason = "NOT_APPLICABLE", "DELTA_ZERO"
     else:
-        top3 = float(yr.iloc[:3].sum())
-        share = top3 / p_range
-        max_year = int(yr.index[0])
-        sub2 = sl[sl["year"] != max_year].copy()
-        d2 = delta_of(sub2, "env_main")
-        months2, cnt2, ssum2 = boot_setup(sub2, "env_main")
-        b2 = boot_delta(cnt2, ssum2, months2.size, U) if months2.size else dict(valid=0, lo=np.nan, hi=np.nan)
-        if b2["valid"] < MIN_VALID:
-            t4, t4_reason = "NOT_APPLICABLE", "INSUFFICIENT_SAMPLE"
+        adv = (pi * t4_dir)
+        adv = adv[adv > 0].sort_values(ascending=False)
+        p_adv = float(adv.sum())
+        if p_adv <= 0:
+            t4, t4_reason = "NOT_APPLICABLE", "P_ADV_NEG"
+        elif adv.size < 3:
+            t4, t4_reason = "NOT_APPLICABLE", "FEW_ADV_YEARS"
         else:
-            t4_reason = ""
-            ok4 = (top3 > 0) and (abs(share) <= T4_TOP_SHARE) and (d2 > TOL_ZERO) and (b2["lo"] > 0)
-            t4 = "PASS" if ok4 else "FAIL"
-        t4_detail = dict(top3=top3, share=float(share), max_year=max_year,
-                         delta_ex_max=d2, ci_lo_ex_max=b2["lo"], ci_hi_ex_max=b2["hi"],
-                         valid_ex_max=b2["valid"])
-    bt_rows.append(dict(definition="T4_ex_max_year", delta=t4_detail.get("delta_ex_max", np.nan),
+            top3 = float(adv.iloc[:3].sum())
+            share = top3 / abs(dm0["delta"])
+            y_star = int(adv.index[0])
+            sub2 = sl[sl["year"] != y_star].copy()
+            d2 = delta_of(sub2, "env_main")
+            months2, cnt2, ssum2 = boot_setup(sub2, "env_main")
+            b2 = boot_delta(cnt2, ssum2, months2.size, U) if months2.size else dict(valid=0, lo=np.nan, hi=np.nan)
+            if b2["valid"] < MIN_VALID:
+                t4, t4_reason = "NOT_APPLICABLE", "INSUFFICIENT_SAMPLE"
+            else:
+                t4_reason = ""
+                item_a = bool(top3 > 0)
+                item_b = bool(abs(share) <= T4_TOP_SHARE)
+                item_c = bool(t4_dir * d2 > TOL_ZERO)
+                item_d = bool(b2["lo"] > 0) if t4_dir > 0 else bool(b2["hi"] < 0)
+                ok4 = item_a and item_b and item_c and item_d
+                t4 = "PASS" if ok4 else "FAIL"
+                t4_items = dict(a=item_a, b=item_b, c=item_c, d=item_d)
+            t4_detail = dict(direction=t4_dir, top3=top3, share=float(share),
+                             max_adv_year=y_star, p_adv=p_adv,
+                             delta_ex_max=d2, ci_lo_ex_max=b2["lo"], ci_hi_ex_max=b2["hi"],
+                             valid_ex_max=b2["valid"], items=t4_items if b2["valid"] >= MIN_VALID else {})
+    pi_by_year = {int(k): float(v) for k, v in pi.items()}
+    bt_rows.append(dict(definition="T4_adv_year_ex", delta=t4_detail.get("delta_ex_max", np.nan),
                         ci_lo_cluster=t4_detail.get("ci_lo_ex_max", np.nan),
                         ci_hi_cluster=t4_detail.get("ci_hi_ex_max", np.nan),
                         valid_cluster=t4_detail.get("valid_ex_max", 0),
@@ -530,19 +552,34 @@ def main() -> None:
               and (not np.isfinite(mm.get("profit_factor", np.nan))
                    or mm.get("profit_factor", 0) >= mt.get("profit_factor", 0)))
     t5 = bool(m_main["year"].nunique() >= 6)
+    # v1.5 对称闸门：仅在 Δ<0 时参与判定
+    t2_rev = bool(dm["delta"] < -TOL_ZERO and dm["hi"] < 0
+                  and mt.get("win_rate", 0) > mm.get("win_rate", 0))
+    t3_rev = bool(mt.get("mae_abs", np.inf) <= mm.get("mae_abs", -np.inf)
+                  and (not np.isfinite(mt.get("profit_factor", np.nan))
+                       or mt.get("profit_factor", 0) >= mm.get("profit_factor", 0)))
+    t5_rev = bool(m_trend["year"].nunique() >= 6)
     insufficient = bool((not t0d["ok"]) or (not t5) or dm["valid"] < MIN_VALID
                         or t4_reason == "INSUFFICIENT_SAMPLE")
 
     if insufficient:
         label = "INSUFFICIENT_SAMPLE"
     elif t4 == "FAIL":
-        label = "YEAR_CONCENTRATION"
+        bad4 = [k for k, v in (t4_detail.get("items") or {}).items() if not v]
+        label = "YEAR_CONCENTRATION" + (f" (T4:{','.join(bad4)})" if bad4 else "")
     elif t4 == "NOT_APPLICABLE":
         label = f"CONCENTRATION_NOT_TESTABLE (T4:{t4_reason})"
     elif not t1:
         label = "DEFINITION_ARTIFACT"
-    elif dm["delta"] < 0 and t2 is False and dm["lo"] < 0:
-        label = "TREND_EDGE_REAL"
+    elif t4_dir < 0:
+        if t2_rev and t3_rev and t5_rev:
+            label = "TREND_EDGE_REAL"
+        elif not t2_rev:
+            label = "NO_ENVIRONMENT_EDGE"
+        elif not t3_rev:
+            label = "NO_ENVIRONMENT_EDGE (T3)"
+        else:
+            label = "NO_ENVIRONMENT_EDGE (T5)"
     elif not t2:
         label = "NO_ENVIRONMENT_EDGE"
     elif not t3:
@@ -555,10 +592,11 @@ def main() -> None:
     summary = dict(
         protocol_sha256=PROTO_SHA, phase="EP-02h", label=label,
         gates=dict(T0=t0d, T1=t1, T2=t2, T3=t3, T4=t4, T4_reason=t4_reason,
-                   T5=t5, T6=t6),
+                   T5=t5, T6=t6, T2_rev=t2_rev, T3_rev=t3_rev, T5_rev=t5_rev),
         samples=dict(signals=int(len(sl)), unmapped_signal_date=unmapped,
                      months=int(sl["month"].nunique())),
         years_range=int(m_main["year"].nunique()),
+        years_trend=int(m_trend["year"].nunique()),
         main=dict(delta=float(dm["delta"]), ci_lo=dm["lo"], ci_hi=dm["hi"],
                   valid=dm["valid"], seed=SEED_MAIN,
                   range=mm, trend=mt, up=metrics(sl[sl["env_main"] == "up"]),
@@ -568,7 +606,8 @@ def main() -> None:
                              valid=v["valid"], eligible=v["eligible"])
                      for k, v in boot.items() if k != "main"},
         concentration=dict(p_range=p_range, result=t4, reason=t4_reason, **t4_detail,
-                           by_year={int(k): float(v) for k, v in yr.items()}),
+                           by_year={int(k): float(v) for k, v in yr.items()},
+                           pi_by_year=pi_by_year),
         local_trend=t6,
         portfolio=dict(final_nav=pf["final_nav"], fills=len(pf["trades"]),
                        mdd=pf["mdd"], reproduce_dev=dev),
@@ -593,7 +632,7 @@ def write_report(s: dict, env_m: pd.DataFrame, boot: pd.DataFrame,
     g = s["gates"]
     L = []
     L.append("# EP-02h 趋势结构与震荡环境下的 B 类信号（诊断报告）\n")
-    L.append(f"- 协议：`EP02H_TREND_RANGE_PROTOCOL.md` v1.4，SHA256 `{PROTO_SHA[:16]}…`")
+    L.append(f"- 协议：`EP02H_TREND_RANGE_PROTOCOL.md` v1.5，SHA256 `{PROTO_SHA[:16]}…`")
     L.append(f"- 结论标签：**{s['label']}**")
     L.append(f"- 信号 {s['samples']['signals']:,} 笔，月份 {s['samples']['months']} 个；"
              f"signal_date 未在日历中的映射异常 {s['samples']['unmapped_signal_date']} 笔")
@@ -634,15 +673,35 @@ def write_report(s: dict, env_m: pd.DataFrame, boot: pd.DataFrame,
     L.append(f"| T3 风险不劣化 | {'PASS' if g['T3'] else 'FAIL'} | "
              f"\\|MAE\\| {m['range']['mae_abs']*100:.2f}% vs {t['mae_abs']*100:.2f}%；"
              f"盈亏比 {m['range']['profit_factor']:.3f} vs {t['profit_factor']:.3f} |")
-    share = s["concentration"].get("share", float("nan"))
-    share_txt = "n/a" if not np.isfinite(share) else f"前 3 年占比 {share*100:.1f}%"
-    L.append(f"| T4 年份集中 | {g['T4']} | {g['T4_reason'] or share_txt} |")
+    if s["concentration"].get("direction", 0) < 0:
+        L.append(f"| T2′ 反向 | {'PASS' if g['T2_rev'] else 'FAIL'} | "
+                 f"Δ {_pct(m['delta'])}，CI 上界 {_pct(m['ci_hi'])}；胜率 "
+                 f"{t['win_rate']:.2%} vs {m['range']['win_rate']:.2%} |")
+        L.append(f"| T3′ 反向 | {'PASS' if g['T3_rev'] else 'FAIL'} | "
+                 f"\\|MAE\\| {t['mae_abs']*100:.2f}% vs {m['range']['mae_abs']*100:.2f}%；"
+                 f"盈亏比 {t['profit_factor']:.3f} vs {m['range']['profit_factor']:.3f} |")
+    cd = s["concentration"]
+    if g["T4"] == "NOT_APPLICABLE" and cd.get("reason"):
+        t4_txt = f"原因码 {cd['reason']}"
+    elif np.isfinite(cd.get("share", np.nan)):
+        dname = "trend" if cd.get("direction", 1) < 0 else "range"
+        t4_txt = (f"优势方向 {dname}；前 3 年占净优势 {cd['share']*100:.1f}%，"
+                  f"最大优势年 {cd.get('max_adv_year')}")
+    else:
+        t4_txt = ""
+    L.append(f"| T4 年份集中 | {g['T4']} | {t4_txt} |")
     L.append(f"| T5 年度覆盖 | {'PASS' if g['T5'] else 'FAIL'} | "
-             f"range 覆盖 {s['years_range']} 个自然年 |")
+             f"range 覆盖 {s['years_range']} 个自然年；trend 覆盖 {s['years_trend']} 个 |")
     L.append(f"| T6 局部趋势 | {'PASS' if g['T6'].get('ok') else 'FAIL'} | "
              f"高−低 {_pct(g['T6'].get('delta', float('nan')))}，"
              f"CI 下界 {_pct(g['T6'].get('lo', float('nan')))}，"
              f"有效 {g['T6'].get('valid', 0):,} |")
+    items = cd.get("items") or {}
+    if items:
+        L.append("")
+        L.append("T4 分项：" + "、".join(f"{k} {'PASS' if v else 'FAIL'}" for k, v in items.items())
+                 + f"；删除优势最大年份后 Δ {_pct(cd.get('delta_ex_max'))}，"
+                   f"CI [{_pct(cd.get('ci_lo_ex_max'))}, {_pct(cd.get('ci_hi_ex_max'))}]。")
     L.append("")
 
     L.append("## 3. Bootstrap 明细\n")

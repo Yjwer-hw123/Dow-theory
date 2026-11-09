@@ -4,8 +4,13 @@
   "frozen_at": "2026-11-09",
   "status": "FROZEN_PREREGISTERED",
   "protocol_md": "out/entry_phase_02/EP02H_TREND_RANGE_PROTOCOL.md",
-  "protocol_version": "1.4",
-  "protocol_sha256": "B79DE0B84D9F777CBAF173B23C505ABD8283290F670C22A78DD2017EEFBD1CBD",
+  "protocol_version": "1.5",
+  "protocol_sha256": "556BD8036EDA0866D2387252C21A44BA55795ECF51B06921906BB8A7F82D0437",
+  "supersedes": {
+    "protocol_version": "1.4",
+    "protocol_sha256": "B79DE0B84D9F777CBAF173B23C505ABD8283290F670C22A78DD2017EEFBD1CBD",
+    "reason": "v1.4 的 T4 c/d 固定要求 Δ>0，执行结果为 Δ<0 时 TREND_EDGE_REAL 结构性不可达；且 a/b 以 range 净利为对象，不能否证 trend 优势。v1.5 仅把 T4 对称化到 Δ 的年度贡献 π_y，并显式定义 T2′/T3′/T5′。样本、阈值、迭代次数、种子与全部禁项不变。"
+  },
   "upstream": {
     "ep02g_protocol_sha256": "FA8C04BB813998D89321ECCFB27554F86B6899E0964EE949A3561A654E933029",
     "ep02f_protocol_sha256": "7F2BC93357A933B82FF9A74F6C748058555121473091B7F758D19F37EBD6C3F8",
@@ -33,6 +38,7 @@
   },
   "statistics": {
     "difference": "Δ = mean(net15 | range) − mean(net15 | trend)，trend = up ∪ down",
+    "year_contribution": "π_y = S_{r,y}/N_r − S_{t,y}/N_t，满足 Σ_y π_y = Δ；优势方向 s = sign(Δ)，优势幅度 a_y = s·π_y",
     "cluster_bootstrap": "月度聚类 Bootstrap，10,000 次，seed 20261108，90% CI (5%–95%)",
     "common_uniform": "U ∈ [0,1)^{10000 × m0} 一次生成，各定义取每行前 m_d 个元素",
     "min_valid_iterations": 9500,
@@ -43,9 +49,12 @@
     "T1": "主定义 Δ 非零（|Δ|<=1e-6 视为零），且 S-a/S-b/S-c 中至少两个同号",
     "T2": "Δ > 0 且 90% CI 下界 > 0 且 range 胜率 > trend 胜率",
     "T3": "range 的 |MAE15| 均值 <= trend，且盈亏比 >= trend",
-    "T4": "PASS / FAIL / NOT_APPLICABLE 三态；剔除最大净利年份全部信号后 Δ 仍 > 0 且 CI 下界 > 0",
+    "T4": "对称化：PASS/FAIL/NOT_APPLICABLE 三态；a) 前3大优势年 π 之和 > 0；b) 其和 / |Δ| <= 60%；c) 删除优势最大年份 y* 的全部信号后 s·Δ' > 0；d) 删除后 Bootstrap 的 s·CI 下界 > 0（s=+1 用下界，s=-1 用上界）",
     "T5": "range 入场覆盖 >= 6 个不同自然年度",
-    "T6": "range 内 stock_ER20 高组 − 低组 > 0 且 CI 下界 > 0（机制证据）"
+    "T6": "range 内 stock_ER20 高组 − 低组 > 0 且 CI 下界 > 0（机制证据）",
+    "T2_rev": "Δ < -1e-6 且 90% CI 上界 < 0 且 trend 胜率 > range 胜率",
+    "T3_rev": "trend 的 |MAE15| 均值 <= range，且盈亏比 >= range",
+    "T5_rev": "trend 入场覆盖 >= 6 个不同自然年度"
   },
   "reproduction_gates": {
     "h15_final_nav": 22335139.61910044,

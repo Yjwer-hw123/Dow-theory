@@ -1,6 +1,6 @@
 # EP-02h 趋势结构与震荡环境下的 B 类信号表现差异（任务书）
 
-- 版本：1.4（**最终修订稿，待确认，尚未冻结**）
+- 版本：1.5（**对称化 T4 修订稿，2026-11-09 冻结**）
 - 日期：2026-11-08
 - 修订记录（v1.0 → v1.1，修时间口径与定义歧义，不改研究假设与判定门槛）：
   - R1 修复环境标签时点穿越：全部环境指标改用 `signal_date` 收盘及之前的数据，禁用入场日收盘价。
@@ -22,6 +22,11 @@
   - W1 主定义固定使用完整 11,419 个信号；S-a / S-b / S-c 各自使用自身具备完整历史的有效样本，分别报告 `unknown` 数、有效信号数、有效月份数；T1 只统计样本与 Bootstrap 均达标的敏感性定义。
   - W2 明确各定义在自身有效月份集合上做标准月度聚类 Bootstrap，并以同一组随机数实现「共同索引」的可比性（见 3.3）。
   - W3 新增 3.4：明确 T6 的差分对象、月份集合、分组阈值固定方式与报告项。
+- 修订记录（v1.4 → v1.5，仅对称化 T4 与标签可达性，不改样本、阈值、迭代次数与种子）：
+  - X1 v1.4 的 T4 a/b 以 `range` 净利为对象，c/d 固定要求 `Δ > 0`；当执行结果为 `Δ < 0` 时 `TREND_EDGE_REAL` 结构性不可达，且「`range` 利润年份集中」不能否证「`trend` 优势」。v1.4 从未产生 `Δ > 0` 的执行结果，故本次修订不影响任何已发布的 `Δ > 0` 数值。
+  - X2 T4 的 a–d 统一改到「年份对 Δ 的贡献 `π_y`」上：`π_y = S_{r,y}/N_r − S_{t,y}/N_t`，满足 `Σ_y π_y = Δ`；优势方向由 `s = sign(Δ)` 决定，两个方向使用同一对象与同一门槛。
+  - X3 明确反向闸门 T2′/T3′/T5′ 的口径，并写入标签表，使 `TREND_EDGE_REAL` 在执行结果为 `Δ < 0` 时可被正常判定。
+  - X4 其余条款（问题、环境定义、样本、Bootstrap、T0/T1/T5/T6、禁项）一律不变。
 - 性质：**诊断实验**，不是 EP-02 的生死裁决。只回答「B 类信号在不同趋势结构环境下的未来收益与风险是否存在显著差异」，不选参数、不建开关、不产生采用建议。
 - **冻结范围的界定**：本协议的冻结只锁定本次诊断的问题、数据口径与判定门槛，防止看到结果后修改规则；**不构成对 EP-02 策略线的存续裁定**。无论结果为 `RANGE_EDGE_REAL`、`NO_ENVIRONMENT_EDGE`、`YEAR_CONCENTRATION`、`DEFINITION_ARTIFACT` 或其他，都不得解释为 EP-02 被冻结、终止或放弃，EP-02 继续保留为研究主线。
 - 上游：EP-02g（协议 SHA256 `FA8C04BB…`，`STABLE_PLATEAU` / `CONDITIONAL`）；B0 冻结基准（60 bar）；EP-02f 归因（`CAPACITY_REAL_SIGNAL`）。
@@ -160,35 +165,48 @@ S-c 只用于检验「02g 的归因是否由定义方式造成」，不参与主
 | T1 | 主定义 `Δ` **必须非零**（`|Δ| ≤ 1e-6` 视为零），且 S-a / S-b / S-c 中**至少两个**与其同号；只有样本与 Bootstrap 均达标（见 3.3）的敏感性定义才计入，`SENS_INELIGIBLE` 者既不计同号也不计反号；各定义 `|Δ| ≤ 1e-6` 均视为零 | 排除 E3 |
 | T2 | 主定义 `Δ > 0`，且月度聚类 90% CI 下界 > 0；同时 `range` 胜率 > `trend` 胜率 | 支持 E1 |
 | T3 | 风险不劣化：`range` 的 `|MAE15|` 均值不大于 `trend`，且盈亏比不低于 `trend` | 支持 E1 |
-| T4 | 见下方 4.1 分项规则；通过需同时满足 a–d | 排除 E2 |
+| T4 | 见下方 4.1 分项规则（v1.5 对称化）；通过需同时满足 a–d | 排除 E2 |
 | T5 | `range` 入场至少覆盖 6 个不同自然年度 | 排除单周期偶然 |
 | T6 | 仅在 `range` 环境内：`Δ_T6 = mean(net15 | high) − mean(net15 | low) > 0`，且 90% CI 下界 > 0；差分、月份集合、固定分组阈值与报告项按 3.4 执行 | E1 的机制证据 |
 
-### 4.1 T4 的分项与结果分类
+### 4.1 T4 的分项与结果分类（v1.5 对称化）
 
-设 `range` 全部信号净利合计为 `P_range`，年份级净利为 `P_y`。
+T4 检验「观测到的优势是否由少数年份驱动」。设：
+
+- `N_r`、`N_t` 分别为 `range` 与 `trend`（`up ∪ down`）的信号总数；
+- `S_{r,y}`、`S_{t,y}` 为年份 `y` 内两组 `net15` 之和；
+- 年份对 `Δ` 的贡献 `π_y = S_{r,y}/N_r − S_{t,y}/N_t`，满足精确可加分解 `Σ_y π_y = Δ`；
+- 优势方向 `s = sign(Δ)`（`|Δ| ≤ 1e-6` → `NOT_APPLICABLE`，原因码 `DELTA_ZERO`）；
+- 优势年份集合 `A = { y : s·π_y > 0 }`，优势幅度 `a_y = s·π_y`。
 
 **不适格检查**，命中任一即 `NOT_APPLICABLE`（不计算占比）：
 
-- `P_range ≤ 0`；
-- 净利为正的年份数 < 3。
+- `Σ_{y∈A} a_y ≤ 0` → 原因码 `P_ADV_NEG`；
+- `|A| < 3` → 原因码 `FEW_ADV_YEARS`。
 
 **通过需同时满足**：
 
-- a. 前 3 大年份净利之和 `P_top3 > 0`；
-- b. `P_top3 / P_range ≤ 60%`；
-- c. 从信号样本中**删除净利最大年份的全部信号**后，`Δ` 仍 > 0（不得只从年度汇总表删行）；
-- d. 在上述删除后的信号样本上重算月度聚类 Bootstrap：月份集合取剩余仍含信号的月份 `M′`，有放回抽取 `|M′|` 个月，10,000 次，种子 `20261108`，`Δ` 的 90% CI 下界 > 0。若有效迭代 < 9,500，整阶段判 `INSUFFICIENT_SAMPLE`。
+- a. 前 3 大优势年份之和 `P_top3 > 0`；
+- b. `P_top3 / |Δ| ≤ 60%`；
+- c. 从信号样本中**删除优势最大年份 `y* = argmax a_y` 的全部信号**后，`s·Δ′ > 0`（不得只从年度汇总表删行）；
+- d. 在上述删除后的信号样本上重算月度聚类 Bootstrap：月份集合取剩余仍含信号的月份 `M′`，有放回抽取 `|M′|` 个月，10,000 次，种子 `20261108`，要求 `s·CI 下界 > 0`（`s=+1` 时 CI 下界 > 0；`s=−1` 时 CI 上界 < 0）。若有效迭代 < 9,500，整阶段判 `INSUFFICIENT_SAMPLE`。
+
+专项说明（v1.5 与 v1.4 的差异及不改项）：
+
+- v1.4 的 a/b 以 `range` 净利为对象，c/d 固定要求 `Δ > 0`；在 `Δ < 0` 时 `TREND_EDGE_REAL` 不可达，且「`range` 利润年份集中」不能否证「`trend` 优势」。v1.5 把 a–d 统一到 `π_y` 上，使两个方向使用同一对象、同一门槛。
+- 样本、环境定义、阈值（`60%` / `0.30` / `0.35` / `0.25`）、迭代次数（10,000）、最小有效次数（9,500）与种子（`20261108`）均不变。
+- v1.4 从未产生 `Δ > 0` 的执行结果，故本标准替换不影响任何已发布的 `Δ > 0` 数值。
+- `p2h_summary.json` 同时保留 `P_range`（`range` 净利合计）作为参考，但**不再作为 T4 的判定对象**。
 
 **结果分类**：
 
 | T4 结果 | 含义 | 对结论的作用 |
 |---|---|---|
-| `PASS` | a–d 全部满足 | 年份集中度未构成明显问题 |
+| `PASS` | a–d 全部满足 | 优势的年份集中度未构成明显问题 |
 | `FAIL` | 不适格检查通过，但 a–d 中任一不满足 | 年份集中度检验未通过，支持 E2 |
-| `NOT_APPLICABLE` | 命中不适格检查（`P_range ≤ 0` → 原因码 `P_NEG`；正净利年份 < 3 → `FEW_POS_YEARS`） | 无法进行有意义的集中度检验；**不得解释为年份集中** |
+| `NOT_APPLICABLE` | 命中不适格检查（`DELTA_ZERO` / `P_ADV_NEG` / `FEW_ADV_YEARS`）或 `INSUFFICIENT_SAMPLE` | 无法进行有意义的集中度检验；**不得解释为年份集中** |
 
-`NOT_APPLICABLE` 既不视为 `FAIL`，也不视为通过：它使 `RANGE_EDGE_REAL` / `RANGE_LOCAL_TREND` 不能成立，并单独给出标签 `CONCENTRATION_NOT_TESTABLE`。
+`NOT_APPLICABLE` 既不视为 `FAIL`，也不视为通过：它使 `RANGE_EDGE_REAL` / `RANGE_LOCAL_TREND` / `TREND_EDGE_REAL` 不能成立，并单独给出标签 `CONCENTRATION_NOT_TESTABLE`。
 
 ### 4.2 结论标签
 
@@ -196,14 +214,14 @@ S-c 只用于检验「02g 的归因是否由定义方式造成」，不参与主
 |---|---|
 | `RANGE_EDGE_REAL` | T0–T3、T5 通过，且 T4 = `PASS` |
 | `RANGE_LOCAL_TREND` | 上述全部通过，且 T6 通过（更强版本） |
-| `TREND_EDGE_REAL` | `Δ` 反向且对称闸门（T1–T3、T5 反向）通过，T4 = `PASS` |
+| `TREND_EDGE_REAL` | `Δ < −1e-6` 且反向闸门全部通过：T1 通过、T2′（CI 上界 < 0 且 `trend` 胜率 > `range` 胜率）、T3′（`trend` 的 `|MAE15|` ≤ `range` 且盈亏比 ≥ `range`）、T5′（`trend` 覆盖 ≥ 6 个自然年），且 T4 = `PASS` |
 | `YEAR_CONCENTRATION` | T4 = `FAIL`（E2） |
 | `CONCENTRATION_NOT_TESTABLE` | T4 = `NOT_APPLICABLE`（无法检验；不构成 E2 证据，也不构成通过） |
 | `DEFINITION_ARTIFACT` | T1 不通过（E3） |
-| `NO_ENVIRONMENT_EDGE` | T2 不通过且 T1 通过（CI 含 0） |
-| `INSUFFICIENT_SAMPLE` | T0、T5 或任一月度聚类 Bootstrap 有效次数 < 9,500 |
+| `NO_ENVIRONMENT_EDGE` | 优势方向对应的 T2 不通过且 T1 通过（CI 含 0） |
+| `INSUFFICIENT_SAMPLE` | T0、T5（或 T5′）或任一月度聚类 Bootstrap 有效次数 < 9,500 |
 
-标签可叠加失败闸门编号与注解标记（`NEUTRAL_HIGH`、`UNKNOWN_HIGH`），例如 `YEAR_CONCENTRATION (T4:b)`、`CONCENTRATION_NOT_TESTABLE (T4:P_NEG)`。
+标签可叠加失败闸门编号与注解标记（`NEUTRAL_HIGH`、`UNKNOWN_HIGH`），例如 `YEAR_CONCENTRATION (T4:b)`、`CONCENTRATION_NOT_TESTABLE (T4:P_ADV_NEG)`。
 
 ## 5. 禁止事项
 
@@ -225,13 +243,13 @@ S-c 只用于检验「02g 的归因是否由定义方式造成」，不参与主
 | `p2h_env_daily.csv` | 交易日 × ER20/ER60/ER120、d20/d60/d120、主定义与三个敏感性标签（均为当日收盘可得） |
 | `p2h_signal_level.csv` | 每个信号：`signal_date` 环境标签、stock_ER20、ma20_pos、net15、MAE/MFE、恢复天数 |
 | `p2h_env_metrics.csv` | 各环境（含 `neutral`）的信号级指标 |
-| `p2h_bootstrap.csv` | Δ 的月度聚类与 iid 两种 90% CI、有效次数、种子；含 T4 删除最大净利年份后重算的结果 |
+| `p2h_bootstrap.csv` | Δ 的月度聚类与 iid 两种 90% CI、有效次数、种子；含 T4 删除优势最大年份后重算的结果 |
 | `p2h_year.csv` | 年份 × 环境 的信号数与净利合计 |
 | `p2h_local_trend.csv` | 震荡环境内 stock_ER20 三组的 net15 与差分 CI |
 | `p2h_sensitivity_samples.csv` | 主定义与 S-a / S-b / S-c 各自的有效信号数、有效月份数、`unknown` 数、Bootstrap 有效次数、是否具备 T1 资格 |
 | `p2h_boundary_counts.csv` | `neutral` / `unknown` / `er_zero_denom` / 缺失 / 映射异常 的计数（按定义分列） |
 | `p2h_portfolio.csv` | 3 仓 H15 按环境的成交与净利（一致性核对） |
-| `p2h_summary.json` | 指标、T0–T6 判定（T4 三态与原因）、结论标签、种子 |
+| `p2h_summary.json` | 指标、T0–T6 判定（T4 三态与原因）、年份贡献 `π_y`、结论标签、种子 |
 | `P2H_TREND_RANGE_REPORT.md` | 报告 |
 
 ## 7. 已知局限

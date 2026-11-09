@@ -60,10 +60,10 @@
 
 ## 5. EP-02h：趋势 vs 震荡（已冻结、已执行，2026-11-09）
 
-- 协议 v1.4，SHA256 `B79DE0B84D9F777CBAF173B23C505ABD8283290F670C22A78DD2017EEFBD1CBD`；冻结记录 `EP02H_TREND_RANGE_PROTOCOL_FREEZE.json`。
+- 协议 v1.5，SHA256 `556BD8036EDA0866D2387252C21A44BA55795ECF51B06921906BB8A7F82D0437`；冻结记录 `EP02H_TREND_RANGE_PROTOCOL_FREEZE.json`（含 v1.4 的 `supersedes` 说明）。
 - 脚本 `scripts/entry_phase_02h_trend_range.py`；报告 `P2H_TREND_RANGE_REPORT.md`。
 - 复现：H15 组合 NAV 22,335,139.62、偏差 0.00e+00、672 笔 → 通过冻结复现闸门。
-- 样本：信号 11,419 笔；`range` 10,242 笔 / 232 月，`trend` 1,177 笔 / 42 月（`up` 1,141、`down` 36）；`neutral` 0。
+- 样本：信号 11,419 笔；`range` 10,242 笔 / 232 月 / 22 年，`trend` 1,177 笔 / 42 月 / 16 年（`up` 1,141、`down` 36）；`neutral` 0。
 
 | 环境 | 笔数 | 单笔均值 | 中位数 | 胜率 | 盈亏比 | \|MAE\| |
 |---|---|---|---|---|---|---|
@@ -72,11 +72,10 @@
 
 - Δ = range − trend = **-3.89%**，月度聚类 90% CI **[-7.33%, -0.84%]**，有效 10,000/10,000。
 - 四个定义同向为负：主 -3.89%、S-a -2.38%、S-b -5.61%、S-c -2.36%（T1 通过）。
-- 闸门：T0 PASS、T1 PASS、T2 FAIL、T3 FAIL、T4 FAIL、T5 PASS、T6 FAIL（Δ_T6 +0.36%，CI 下界 -0.30%）。
-- 脚本按字面输出标签：**`YEAR_CONCENTRATION (T4:b)`**（`range` 前 3 年净利占比 65.85% > 60%，最大年份 2025）。
-- **实质结论**：单笔层面趋势环境优于震荡环境（CI 上界亦 < 0，非「无差异」）；02g 的「震荡市贡献 84.5% 对数财富」成立但属时间暴露，不构成单笔优势。
-- **协议缺陷（未改判，待裁决）**：T4 的 c/d 项要求「删除最大年份后 Δ 仍 > 0」，在 Δ < 0 时 `TREND_EDGE_REAL` 结构性不可达；T4 b 项检验的是 `range` 利润的年份集中度，用于否证「range 优势」，不能用于否证「trend 优势」。因此 `YEAR_CONCENTRATION` 不是对本次结果的正确描述。是否出 v1.5（仅做对称化标签逻辑、不重算数据、不重跑）由用户裁决；**冻结后不自行改判**。
-- 补充事实：删除 `range` 最大净利年份 2025 后 Δ = -5.91%，CI [-10.19%, -1.68%]，反方向仍稳健。
+- 闸门：T0 PASS、T1 PASS、T2/T3 FAIL（正向口径，仅表示 range 不占优）、T2′/T3′/T5′ PASS（反向口径）、T4 FAIL、T5 PASS、T6 FAIL（Δ_T6 +0.36%，CI 下界 -0.30%）。
+- 标签：**`YEAR_CONCENTRATION (T4:b)`**。v1.5 的 T4 检验 Δ 的年度贡献 `π_y`：a/c/d 通过（删除优势最大年 2007 后 Δ = -2.49%，CI [-4.61%, -0.65%]），仅 b 未通过——前 3 大优势年（2007/2006/2015）占净优势 **80.1%**，高于 60% 上限。
+- **实质结论**：单笔层面趋势环境显著优于震荡环境（四个定义 CI 上界均 < 0，不是「无差异」），且差异非单一年份造成；但优势高度集中于 2006/2007/2015 三段趋势行情。02g 的「震荡市贡献 84.5% 对数财富」成立，但属时间暴露（震荡月多→信号多），不构成单笔优势。
+- 复现口径：`p2h_summary.json` 的 `concentration` 同时给出 `direction / p_adv / max_adv_year / items / pi_by_year`，与报告一致。
 
 ## 5b. 已冻结待执行（无）
 
@@ -90,7 +89,7 @@
 | `EP02E_INVESTABILITY_PROTOCOL.md` | `61A87D33…` |
 | `EP02F_ATTR_PROTOCOL.md` | `7F2BC933…` |
 | `EP02G_HORIZON_CYCLE_PROTOCOL.md` | `FA8C04BB…` |
-| `EP02H_TREND_RANGE_PROTOCOL.md` | `B79DE0B8…`（2026-11-09 冻结） |
+| `EP02H_TREND_RANGE_PROTOCOL.md` | `556BD803…`（v1.5，2026-11-09 冻结；v1.4 `B79DE0B8…` 已被取代） |
 
 配套 `*_FREEZE.json` 与 `EP02D_STOP_DECISION_FREEZE.json` 同为冻结记录，不得改写。
 

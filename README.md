@@ -27,11 +27,11 @@
 > 原仓库已收敛为 ENTRY-PHASE 入场线（B 类信号），两者互不构成前置条件。
 >
 > **缓存迁移提示**：本仓库只随版本控制携带 6 个指数 parquet（`cache/*.parquet`，约 1.6 MB）。
-> `cache/stocks`（HS300 个股，655 MB）、`cache/qfq`、`cache/raw`、`cache/factors` 仍在
-> `D:/python_prog/dow-theory/cache/`。因此 P11-C / P12 相关脚本
+> `cache/stocks`（HS300 个股）已于 2026-11-09 在上游 `D:/python_prog/dow-theory` 清空释放
+> （其代码名单已固化到上游 `data/universe/stock_codes.json`）；`cache/qfq`、`cache/raw`、
+> `cache/factors` 仍在 `D:/python_prog/dow-theory/cache/`。因此 P11-C / P12 相关脚本
 > （`run_p11c.py`、`run_p12_survivorship.py`、`research/overlay_regime.py`）在本仓库首次运行前，
-> 需先跑 `data/stock_loader.py --universe hs300`（约 5 分钟）重建 `cache/stocks`，
-> 或把 `data/stock_loader.py` 的 `CACHE_DIR` 指向上游缓存。
+> 必须先跑 `data/stock_loader.py --universe hs300`（约 5 分钟）重建本仓库自己的 `cache/stocks`。
 
 ---
 
